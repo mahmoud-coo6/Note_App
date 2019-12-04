@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+    <defs>
+        <style>
+            .cls-1{fill:url(#linear-gradient)}
+        </style>
+        <linearGradient id="linear-gradient" x1=".006" x2=".978" y1=".006" y2=".978" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#3d1054"/>
+            <stop offset="1" stop-color="#7b1e58"/>
+        </linearGradient>
+    </defs>
+    <circle id="Oval_5" cx="4" cy="4" r="4" class="cls-1" data-name="Oval 5"/>
+</svg>
