@@ -80,7 +80,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center"
-                android:src="@drawable/ic_oval"/>
+                app:srcCompat="@drawable/ic_oval"/>
 
             <TextView
                 android:layout_width="0dp"
