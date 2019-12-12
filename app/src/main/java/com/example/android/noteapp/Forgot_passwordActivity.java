@@ -60,7 +60,7 @@ EditText emailTv = findViewById(R.id.emailTv);
                     @Override
                     public void onFailure(@NonNull Exception e) {
 
-                        Toast.makeText(Forgot_passwordActivity.this, "some error happend", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Forgot_passwordActivity.this, "some error happend or email not found", Toast.LENGTH_SHORT).show();
 
                     }
 
