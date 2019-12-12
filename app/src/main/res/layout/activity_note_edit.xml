@@ -66,13 +66,18 @@ android:orientation="vertical"
             />
 
         <EditText
-            android:textSize="17dp"
-            android:drawableStart="@drawable/ic_searchicon"
-android:drawablePadding="10dp"
-android:background="@drawable/inputerch"
+            android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notes"
+            android:layout_margin="16dp"
+            android:drawableStart="@drawable/ic_searchicon"
+            android:background="@drawable/ic_searchfield"
+            android:hint="Search"
+            android:drawablePadding="16dp"
+            android:padding="8dp"
+            />
     </LinearLayout>
 
     <LinearLayout
