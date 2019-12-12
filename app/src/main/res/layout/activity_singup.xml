@@ -14,8 +14,9 @@
 
         android:orientation="horizontal">
         <TextView
-            android:paddingHorizontal="11dp"
+            android:id="@+id/text_singTv"
 
+            android:paddingHorizontal="11dp"
             android:paddingVertical="18dp"
             android:paddingStart="23dp"
             android:layout_weight="7"
@@ -26,6 +27,7 @@
             android:text="@string/Signin"
             />
         <ImageView
+            android:id="@+id/image_close"
             android:paddingHorizontal="11dp"
 
             android:paddingVertical="18dp"
