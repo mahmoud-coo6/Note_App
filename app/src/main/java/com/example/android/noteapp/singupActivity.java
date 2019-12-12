@@ -85,7 +85,7 @@ image_close.setOnClickListener(new View.OnClickListener() {
 }
 
     private void doSignUp(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password).
+        mAuth.createUserWithEmailAndPassword(email, password).
                 addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
