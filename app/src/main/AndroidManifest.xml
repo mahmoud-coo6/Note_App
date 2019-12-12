@@ -9,10 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".NoteEditActivity"></activity>
+        <activity android:name=".Edit1Activity" />
+        <activity android:name=".Edit_Page3Activity" />
+        <activity android:name=".Confirmation_messageActivity" />
+        <activity android:name=".Forgot_passwordActivity" />
+        <activity android:name=".singupActivity" />
+        <activity android:name=".LoginActivity" />
         <activity
             android:name=".home_pages"
             android:label="@string/title_activity_home_pages"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -121,7 +121,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_add_notebook"
+            android:src="@drawable/ic_add_notebook"
             android:scaleType="fitCenter"
             android:layout_marginTop="10dp"/>
 
@@ -130,16 +130,13 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_links_notebook"
-            android:tintMode="screen"
-            android:tint="#FF3D1054"/>
-        android:tintMode="screen"
-        android:tint="#FF3D1054"
+            android:src="@drawable/ic_links_notebook" />
+
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_class_notebook" />
+            android:src="@drawable/ic_class_notebook" />
 
     </LinearLayout>
 
