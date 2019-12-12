@@ -47,7 +47,7 @@
         android:textColor="#1A1824"
         android:layout_height="wrap_content" />
     <EditText
-
+        android:id="@+id/emailEt"
         android:layout_marginHorizontal="30dp"
         android:textColorHint="@color/emai_pass_hint"
 
@@ -60,6 +60,8 @@
 
         />
     <EditText
+        android:id="@+id/passwordEt"
+
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="19dp"
         app:backgroundTint="@color/black"
@@ -89,6 +91,8 @@
         android:text="@string/by_sing"/>
     <Button
         android:textAllCaps="false"
+        android:id="@+id/singupBt"
+
 
         android:layout_marginHorizontal="30dp"
         android:textColor="@color/white"
