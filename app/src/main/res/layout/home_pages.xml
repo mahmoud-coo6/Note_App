@@ -121,7 +121,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_add_notebook"
+            app:srcCompat="@drawable/ic_add_notebook"
             android:scaleType="fitCenter"
             android:layout_marginTop="10dp"/>
 
@@ -130,13 +130,19 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_links_notebook" />
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tint="@color/purple"
+            android:tintMode="screen"/>
 
         <ImageView
+            android:id="@+id/centernote1"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_class_notebook" />
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tint="@color/orange"
+            android:tintMode="screen"/>
+
 
     </LinearLayout>
 
@@ -245,8 +251,6 @@
                 android:background="#f9f9f9"
                 android:weightSum="4">
 
-
-
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="3"
@@ -257,7 +261,8 @@
                     android:lineSpacingExtra="5sp"
                     tools:text="Trip to San fran"
                     android:drawableStart="@drawable/ic_oval_6"
-                    android:drawablePadding="16dp" />
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/purple"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -285,6 +290,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/note2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -305,8 +311,6 @@
                 android:layout_height="wrap_content"
                 android:background="#f9f9f9"
                 android:weightSum="4">
-
-
 
                 <TextView
                     android:layout_width="0dp"
@@ -344,6 +348,68 @@
                 tools:text="So far, this is what we need for our trip:" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/note3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note2"
+        android:backgroundTint="#f9f9f9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f9f9f9"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="#000000"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="5sp"
+                    tools:text="Trip to San fran"
+                    android:drawableStart="@drawable/ic_oval_6"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/purple"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#4a4a4a"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="4sp"
+                    tools:text="18/06/12"
+                    android:gravity="end"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="#4d5468"
+                android:letterSpacing="0.01"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4sp"
+                tools:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

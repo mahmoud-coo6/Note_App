@@ -3,22 +3,19 @@
 
     <string name="title_activity_home_pages">home_pages</string>
     <string name="Signin">Sign in</string>
-    <string name="intro_singup">Let’s complete  creation \n of your Notebooks account</string>
+    <string name="intro_singup">Let’s complete  creation \nof your Notebooks account</string>
     <string name="email">Enter your email address</string>
     <string name="password">Enter your password</string>
     <string name="by_sing">By signing up you accept the Terms of \n
 Service and Privacy Policy.</string>
     <string name="forget">Forgot password?</string>
     <string name="forget1">Forgot password</string>
-    <string name="enter">Enter your email and we’ll send you \n
-        instructions on how to reset your password.</string>
+    <string name="enter">Enter your email and we’ll send you \ninstructions on how to reset your password.</string>
     <string name="Recover_password">Recover password</string>
     <string name="singup">Sign up</string>
-    <string name="welcom">Welcome back!\n
-You’ve been missed</string>
+    <string name="welcom">Welcome back!\nYou’ve been missed</string>
     <string name="check_mail">Check your email</string>
-    <string name="reset_email">We’ve sent instructions on how to reset \n
-The password (also check the Spam folder).</string>
+    <string name="reset_email">We’ve sent instructions on how to reset \nThe password (also check the Spam folder).</string>
     <string name="go_to_mail">Go to email</string>
     <string name="note_app_design">Notes App Design</string>
     <string name="deatails_design"></string>

@@ -3,22 +3,22 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="plure">#7b1e58</color>
+    <color name="purple">#7b1e58</color>
     <color name="black">#000000</color>
     <color name="black_text">#1A1824</color>
     <color name="emai_pass_hint">#242134</color>
     <color name="white_text">#000000</color>
     <color name="white">#ffffff</color>
     <color name="green">#34c47c</color>
-<color name="liner_blue">#3023ae</color>
-<color name="liner_green">#b4ec51</color>
-    <color name="liner_orange">#FAD961</color>
-    <color name="liner_blue2">#2351AE</color>
-    <color name="liner_wai">#7CB3FC</color>
-    <color name="liner_pna">#343F3F</color>
-    <color name="liner_twta">#AE2369</color>
-    <color name="liner_red2">#F5515F</color>
-    <color name="liner_red0">#C5582D</color>
-    <color name="liner_blue3">#3023AE</color>
+    <color name="blue">#3023ae</color>
+    <color name="lighgreen">#b4ec51</color>
+    <color name="orange">#FAD961</color>
+    <color name="blue2">#2351AE</color>
+    <color name="lighblue">#7CB3FC</color>
+    <color name="darkgreen">#343F3F</color>
+    <color name="pink">#AE2369</color>
+    <color name="red2">#F5515F</color>
+    <color name="red0">#C5582D</color>
+    <color name="blue3">#3023AE</color>
 
 </resources>
