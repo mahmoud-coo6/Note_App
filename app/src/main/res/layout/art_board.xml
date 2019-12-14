@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="9">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#6FB634" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#F76B1C"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#9F041B"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#C86DD7"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#623FD0"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#1AB9C8"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#FFE194"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#E9649B"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#CD90E1"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="9">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="My Links"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="My Links"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="My Links"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="9">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#00EAF8" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#FFCD2C"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#FC1E50"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#EF14C5"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#6CF6DA"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#FF0467"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#FFE194"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#00FAC1"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#F8A2ED"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="9">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="My Links"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="My Links"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="My Links"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="9">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#48CFAD" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#4FC1E9"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#5D9CEC"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#AC92EC"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#656D78"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#EC87C0"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#FC6E51"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#EDF0F6"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="88dp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ic_links_notebook"
+            android:tintMode="screen"
+            android:tint="#CCD1D9"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="9">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="My Links"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="My Links"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="My Links"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#4a4a4a"
+            android:textSize="6sp"
+            android:text="Class lessons"/>
+
+    </LinearLayout>
+</LinearLayout>

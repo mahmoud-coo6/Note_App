@@ -21,7 +21,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_tutorial"
+            app:srcCompat="@drawable/ic_tutorial"
             android:scaleType="center"/>
         <ImageView
             android:layout_width="match_parent"
@@ -43,12 +43,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="26sp"
-            android:textColor="@color/plure"
+            android:textColor="#7b1e58"
             android:lineSpacingExtra="9sp"
             android:gravity="center_horizontal"
-            tools:text="Notebooks"
+            android:text="Notebooks"
             android:layout_gravity="center"
-            android:padding="32dp"
+            android:padding="8dp"
             />
 
         <TextView
@@ -58,34 +58,30 @@
             android:textColor="#9b9faa"
             android:lineSpacingExtra="8sp"
             android:gravity="center_horizontal"
-            tools:text="Notebooks are the best place to manage your Notes  "
+            android:text="Notebooks are the best place to manage your Notes  "
             android:layout_gravity="center"
-            android:paddingStart="68dp"
-            android:paddingEnd="68dp"
-            android:paddingBottom="32dp"
+            android:paddingStart="44dp"
+            android:paddingEnd="44dp"
             />
 
 
-        <Button
-            android:textAllCaps="false"
-            android:id="@+id/singinBtn"
-            android:layout_marginHorizontal="30dp"
-            android:textColor="@color/white"
-            android:background="@drawable/but_sing"
-            android:layout_marginBottom="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Signin"/>
+    <ImageView
+        android:id="@+id/singinBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/primary_button"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        />
+
         <TextView
             android:id="@+id/singupTV"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign up"
             android:textColor="#1A1824"
-            android:padding="16dp"
+            android:padding="8dp"
             android:gravity="center"
-            android:layout_marginBottom="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             />

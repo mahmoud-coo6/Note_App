@@ -37,9 +37,9 @@
             android:textColor="#7b1e58"
             android:lineSpacingExtra="9sp"
             android:gravity="center_horizontal"
-            tools:text="Notebooks"
+            android:text="Notebooks"
             android:layout_gravity="center"
-            android:padding="32dp"
+            android:padding="16dp"
             />
 
         <TextView
@@ -49,11 +49,11 @@
             android:textColor="#9b9faa"
             android:lineSpacingExtra="8sp"
             android:gravity="center_horizontal"
-            tools:text="Notebooks are the best place to manage your Notes "
+            android:text="Notebooks are the best place to manage your Notes "
             android:layout_gravity="center"
-            android:paddingStart="68dp"
-            android:paddingEnd="68dp"
-            android:paddingBottom="86dp"
+            android:paddingStart="44dp"
+            android:paddingEnd="44dp"
+            android:paddingBottom="32dp"
             />
 
         <LinearLayout
@@ -66,13 +66,14 @@
             android:weightSum="3">
 
             <TextView
+                android:id="@+id/skip"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:textColor="#9b9b9b"
                 android:lineSpacingExtra="5sp"
-                tools:text="Skip"
+                android:text="Skip"
                 android:padding="8dp"/>
 
             <ImageView
@@ -80,9 +81,10 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center"
-                android:src="@drawable/ic_oval"/>
+                app:srcCompat="@drawable/ic_oval"/>
 
             <TextView
+                android:id="@+id/next"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -90,7 +92,7 @@
                 android:textColor="#ffffff"
                 android:lineSpacingExtra="5sp"
                 android:gravity="center_horizontal"
-                tools:text="Next"
+                android:text="Next"
                 android:background="@drawable/ic_create_account"
                 android:padding="16dp"
                 />

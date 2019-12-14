@@ -23,19 +23,15 @@ import java.util.List;
     @NonNull
     @Override
     public CategoryVh onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view =LayoutInflater.from(context).inflate(R.layout., parent , false);
+//        View view =LayoutInflater.from(context).inflate(R.layout., parent , false);
 
-        return new CategoryVh(view);
+//        return new CategoryVh(view);
+        return null;
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoryVh holder, int position) {
         holder.setData(categoryList.get(position));
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
     }
 
     @Override
@@ -50,10 +46,10 @@ class CategoryVh extends RecyclerView.ViewHolder{
     ImageView movie_image;
     public CategoryVh(@NonNull View itemView) {
         super(itemView);
-        movie_name = itemView.findViewById(R.id.movie_name);
-        movie_image = itemView.findViewById(R.id.movie_image);
-        movie_desc = itemView.findViewById(R.id.movie_desc);
-        movie_date = itemView.findViewById(R.id.movie_date);
+//        movie_name = itemView.findViewById(R.id.movie_name);
+//        movie_image = itemView.findViewById(R.id.movie_image);
+//        movie_desc = itemView.findViewById(R.id.movie_desc);
+//        movie_date = itemView.findViewById(R.id.movie_date);
     }
 
     public void setData(Categraty categraty) {

@@ -39,36 +39,36 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        email_logEt = findViewById(R.id.email_logEt);
-        password_logEt = findViewById(R.id.password_logEt);
-        loginButon = findViewById(R.id.loginButon);
-        image_close_login = (ImageView)findViewById(R.id.image_close_login);
-        if(" ".equals(email_logEt.getText().toString())) {
-            email_logEt.setError("worng email");
-            return;
-        }
-        if(password_logEt.getText().toString().equals(" ")) {
-            password_logEt.setError("worng password");
-            return ;
-        }
-        findViewById(R.id.text_singinTv).setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, home_pages.class);
-                startActivity(intent);
-
-            }
-        });
-        findViewById(R.id.forgetTv).setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, Forgot_passwordActivity.class);
-                startActivity(intent);
-
-            }
-        });
+//        email_logEt = findViewById(R.id.email_logEt);
+//        password_logEt = findViewById(R.id.password_logEt);
+//        loginButon = findViewById(R.id.loginButon);
+//        image_close_login = (ImageView)findViewById(R.id.image_close_login);
+//        if(" ".equals(email_logEt.getText().toString())) {
+//            email_logEt.setError("worng email");
+//            return;
+//        }
+//        if(password_logEt.getText().toString().equals(" ")) {
+//            password_logEt.setError("worng password");
+//            return ;
+//        }
+//        findViewById(R.id.text_singinTv).setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this, home_pages.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//        findViewById(R.id.forgetTv).setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this, Forgot_passwordActivity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
 
 
