@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="26sp"
-            android:textColor="#7b1e58"
+            android:textColor="@color/plure"
             android:lineSpacingExtra="9sp"
             android:gravity="center_horizontal"
             tools:text="Notebooks"
@@ -66,16 +66,19 @@
             />
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       android:src="@drawable/primary_button"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        />
-
+        <Button
+            android:textAllCaps="false"
+            android:id="@+id/singinBtn"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="@color/white"
+            android:background="@drawable/but_sing"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Signin"/>
         <TextView
+            android:id="@+id/singupTV"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign up"
