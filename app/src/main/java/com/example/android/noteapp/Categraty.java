@@ -1,8 +1,19 @@
 package com.example.android.noteapp;
 
+import java.util.ArrayList;
+
 public class Categraty {
     String title;
     Integer id;
+    String color;
+    ArrayList<Notes> notes;
+
+    public Categraty(String title, Integer id, String color, ArrayList<Notes> notes) {
+        this.title = title;
+        this.id = id;
+        this.color = color;
+        this.notes = notes;
+    }
 
     public String getTitle() {
         return title;
@@ -28,12 +39,12 @@ public class Categraty {
         this.color = color;
     }
 
-    String color;
+    public ArrayList<Notes> getNotes() {
+        return notes;
+    }
 
-    public Categraty(String title, Integer id, String color) {
-        this.title = title;
-        this.id = id;
-        this.color = color;
+    public void setNotes(ArrayList<Notes> notes) {
+        this.notes = notes;
     }
 }
 

@@ -7,7 +7,6 @@ public class Notes {
     String body;
     String color;
     Date date;
-    Categraty categraty;
 
     public String getTitle() {
         return title;
@@ -41,20 +40,14 @@ public class Notes {
         this.date = date;
     }
 
-    public Categraty getCategraty() {
-        return categraty;
-    }
 
-    public void setCategraty(Categraty categraty) {
-        this.categraty = categraty;
-    }
 
-    public Notes(String title, String body, String color, Date date, Categraty categraty) {
+
+    public Notes(String title, String body, String color, Date date) {
         this.title = title;
         this.body = body;
         this.color = color;
         this.date = date;
-        this.categraty = categraty;
     }
 }
 
