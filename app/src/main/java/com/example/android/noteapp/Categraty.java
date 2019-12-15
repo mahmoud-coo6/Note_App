@@ -46,5 +46,6 @@ public class Categraty {
     public void setNotes(ArrayList<Notes> notes) {
         this.notes = notes;
     }
+
 }
 
