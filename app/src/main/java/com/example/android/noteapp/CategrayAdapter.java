@@ -1,7 +1,6 @@
 package com.example.android.noteapp;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,8 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-  public class CategrayAdapter extends RecyclerView.Adapter<CategrayAdapter.CategoryVh>{
-    Context context ;
+
+public class CategrayAdapter extends RecyclerView.Adapter<CategrayAdapter.CategoryVh> {
+    Context context;
     List<Categraty> categoryList;
 
     public CategrayAdapter(Context context, List<Categraty> categoryList) {
@@ -40,20 +40,20 @@ import java.util.List;
     }
 
 
+    class CategoryVh extends RecyclerView.ViewHolder {
+        TextView categor_name, categor_desc, categor_date;
+        ImageView movie_image;
 
-class CategoryVh extends RecyclerView.ViewHolder{
-    TextView  categor_name , categor_desc , categor_date;
-    ImageView movie_image;
-    public CategoryVh(@NonNull View itemView) {
-        super(itemView);
+        public CategoryVh(@NonNull View itemView) {
+            super(itemView);
 //        movie_name = itemView.findViewById(R.id.movie_name);
 //        movie_image = itemView.findViewById(R.id.movie_image);
 //        movie_desc = itemView.findViewById(R.id.movie_desc);
 //        movie_date = itemView.findViewById(R.id.movie_date);
-    }
+        }
 
-    public void setData(Categraty categraty) {
+        public void setData(Categraty categraty) {
 
-    }
+        }
     }
 }

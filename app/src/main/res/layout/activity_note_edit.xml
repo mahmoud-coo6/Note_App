@@ -1,55 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NoteEditActivity"
     android:background="@color/white"
     android:orientation="vertical"
-    >
+    tools:context=".NoteEditActivity">
 
     <ImageView
         android:id="@+id/header1"
-        android:layout_margin="16dp"
         android:layout_width="wrap_content"
-        android:scaleType="fitStart"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:scaleType="fitStart"
         app:srcCompat="@drawable/navbox" />
 
     <LinearLayout
-        android:layout_marginVertical="16dp"
-        android:layout_marginHorizontal="24dp"
-android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="16dp"
+        android:orientation="vertical">
 
 
         <TextView
-            android:layout_marginBottom="10dp"
-            android:lineHeight="41dp"
-            android:fontFamily="400"
-            android:letterSpacing="0.41"
-            android:textSize="34dp"
-            android:text="Notes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="400"
+            android:letterSpacing="0.41"
+            android:lineHeight="41dp"
+            android:text="Notes"
             android:textColor="#000000"
-            />
+            android:textSize="34dp" />
 
         <EditText
             android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/notes"
-            android:drawableStart="@drawable/ic_searchicon"
             android:background="@drawable/ic_searchfield"
-            android:hint="Search"
+            android:drawableStart="@drawable/ic_searchicon"
             android:drawablePadding="16dp"
+            android:hint="Search"
             android:padding="8dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notes" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -57,17 +53,16 @@ android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#f9f9f9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header3"
-        android:backgroundTint="#f9f9f9">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header3">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="16dp"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -77,38 +72,38 @@ android:orientation="vertical"
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="3"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:textColor="#000000"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="5sp"
-                    tools:text="Trip to San fran"
+                    android:layout_weight="3"
                     android:drawableStart="@drawable/ic_oval_6"
                     android:drawablePadding="16dp"
-                    android:drawableTint="@color/purple"/>
+                    android:drawableTint="@color/purple"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="5sp"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    tools:text="Trip to San fran" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#4a4a4a"
+                    android:layout_weight="1"
+                    android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
-                    tools:text="18/06/12"
-                    android:gravity="end"/>
+                    android:textColor="#4a4a4a"
+                    android:textSize="12sp"
+                    tools:text="18/06/12" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:textColor="#4d5468"
-                android:letterSpacing="0.01"
                 android:layout_marginTop="8dp"
+                android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:textColor="#4d5468"
+                android:textSize="13sp"
                 tools:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -118,17 +113,16 @@ android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#f9f9f9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/note1"
-        android:backgroundTint="#f9f9f9">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="16dp"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -138,37 +132,37 @@ android:orientation="vertical"
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="3"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:textColor="#000000"
+                    android:layout_weight="3"
+                    android:drawableStart="@drawable/ic_oval_5"
+                    android:drawablePadding="16dp"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
-                    tools:text="Shopping list"
-                    android:drawableStart="@drawable/ic_oval_5"
-                    android:drawablePadding="16dp" />
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    tools:text="Shopping list" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#4a4a4a"
+                    android:layout_weight="1"
+                    android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
-                    tools:text="18/06/12"
-                    android:gravity="end"/>
+                    android:textColor="#4a4a4a"
+                    android:textSize="12sp"
+                    tools:text="18/06/12" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:textColor="#4d5468"
-                android:letterSpacing="0.01"
                 android:layout_marginTop="8dp"
+                android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:textColor="#4d5468"
+                android:textSize="13sp"
                 tools:text="So far, this is what we need for our trip:" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -178,17 +172,16 @@ android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#f9f9f9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/note2"
-        android:backgroundTint="#f9f9f9">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="16dp"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -198,38 +191,38 @@ android:orientation="vertical"
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="3"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:textColor="#000000"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="5sp"
-                    tools:text="Trip to San fran"
+                    android:layout_weight="3"
                     android:drawableStart="@drawable/ic_oval_6"
                     android:drawablePadding="16dp"
-                    android:drawableTint="@color/purple"/>
+                    android:drawableTint="@color/purple"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="5sp"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    tools:text="Trip to San fran" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#4a4a4a"
+                    android:layout_weight="1"
+                    android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
-                    tools:text="18/06/12"
-                    android:gravity="end"/>
+                    android:textColor="#4a4a4a"
+                    android:textSize="12sp"
+                    tools:text="18/06/12" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:textColor="#4d5468"
-                android:letterSpacing="0.01"
                 android:layout_marginTop="8dp"
+                android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:textColor="#4d5468"
+                android:textSize="13sp"
                 tools:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -240,17 +233,16 @@ android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#f9f9f9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/note3"
-        android:backgroundTint="#f9f9f9">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note3">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="16dp"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -260,53 +252,52 @@ android:orientation="vertical"
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="3"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:textColor="#000000"
+                    android:layout_weight="3"
+                    android:drawableStart="@drawable/ic_oval_5"
+                    android:drawablePadding="16dp"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
-                    tools:text="Shopping list"
-                    android:drawableStart="@drawable/ic_oval_5"
-                    android:drawablePadding="16dp" />
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    tools:text="Shopping list" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#4a4a4a"
+                    android:layout_weight="1"
+                    android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
-                    tools:text="18/06/12"
-                    android:gravity="end"/>
+                    android:textColor="#4a4a4a"
+                    android:textSize="12sp"
+                    tools:text="18/06/12" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:textColor="#4d5468"
-                android:letterSpacing="0.01"
                 android:layout_marginTop="8dp"
+                android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:textColor="#4d5468"
+                android:textSize="13sp"
                 tools:text="So far, this is what we need for our trip:" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="end"
         android:layout_margin="@dimen/fab_margin"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/fab"
         android:tint="@android:color/white"
         app:backgroundTint="#3D0F54"
-        android:layout_gravity="end"
         app:srcCompat="@android:drawable/ic_input_add" />
 </LinearLayout>

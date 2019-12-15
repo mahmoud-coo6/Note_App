@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/cancel"
@@ -34,10 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            app:srcCompat="@drawable/ic_links_notebook"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_links_notebook" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -97,15 +97,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_oval_4"
-                android:tint="@color/purple" />
+                android:tint="@color/purple"
+                app:srcCompat="@drawable/ic_oval_4" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_green"
-                android:tint="@color/lighgreen" />
+                android:tint="@color/lighgreen"
+                app:srcCompat="@drawable/ic_green" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -117,8 +117,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_bluegreen"
-                android:tint="@color/blue2"/>
+                android:tint="@color/blue2"
+                app:srcCompat="@drawable/ic_bluegreen" />
         </LinearLayout>
 
 
@@ -133,8 +133,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_orange"
-                android:tint="@color/orange"/>
+                android:tint="@color/orange"
+                app:srcCompat="@drawable/ic_orange" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -147,15 +147,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_purble"
-                android:tint="@color/red2"/>
+                android:tint="@color/red2"
+                app:srcCompat="@drawable/ic_purble" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_redlight"
-                android:tint="@color/red0"/>
+                android:tint="@color/red0"
+                app:srcCompat="@drawable/ic_redlight" />
         </LinearLayout>
 
         <LinearLayout
@@ -169,8 +169,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_darkred2"
-                android:tint="@color/pink"/>
+                android:tint="@color/pink"
+                app:srcCompat="@drawable/ic_darkred2" />
 
             <ImageView
                 android:layout_width="0dp"

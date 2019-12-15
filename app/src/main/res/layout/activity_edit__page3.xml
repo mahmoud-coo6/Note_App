@@ -6,27 +6,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Edit_Page3Activity"
     android:background="@color/purple"
     android:orientation="vertical"
-    >
+    tools:context=".Edit_Page3Activity">
+
     <LinearLayout
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="45dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="45dp"
 
         android:orientation="horizontal">
+
         <ImageView
 
-            android:paddingHorizontal="11dp"
-
-            android:paddingVertical="18dp"
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="18dp"
 
-            android:src="@drawable/ic_left"/>
+            android:src="@drawable/ic_left" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -36,61 +38,60 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            app:srcCompat="@drawable/pickershap"/>
+            app:srcCompat="@drawable/pickershap" />
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_marginVertical="16dp"
-        android:layout_marginHorizontal="24dp"
 
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="16dp">
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/date"
             android:buttonTint="@color/white"
             android:paddingStart="8dp"
-            />
+            android:text="@string/date" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginHorizontal="24dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:orientation="vertical">
 
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginBottom="7dp"
-            android:textSize="22dp"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"
             android:text="@string/note_app_design"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:textColor="#000000"
-            />
-        <TextView
-            android:textSize="16dp"
-            android:paddingTop="7dp"
-            android:layout_marginStart="10dp"
-            android:text="@string/app_w"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            />
+            android:textSize="22dp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:paddingTop="7dp"
+            android:text="@string/app_w"
+            android:textColor="#000000"
+            android:textSize="16dp" />
 
 
     </LinearLayout>
-    <View
-        android:layout_marginTop="10dp"
 
+    <View
         android:layout_width="match_parent"
+
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1" />
 
     <LinearLayout
@@ -121,15 +122,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_oval_4"
-                android:tint="@color/purple" />
+                android:tint="@color/purple"
+                app:srcCompat="@drawable/ic_oval_4" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_green"
-                android:tint="@color/lighgreen" />
+                android:tint="@color/lighgreen"
+                app:srcCompat="@drawable/ic_green" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -141,8 +142,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_bluegreen"
-                android:tint="@color/blue2"/>
+                android:tint="@color/blue2"
+                app:srcCompat="@drawable/ic_bluegreen" />
         </LinearLayout>
 
 
@@ -157,8 +158,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_orange"
-                android:tint="@color/orange"/>
+                android:tint="@color/orange"
+                app:srcCompat="@drawable/ic_orange" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -171,15 +172,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_purble"
-                android:tint="@color/red2"/>
+                android:tint="@color/red2"
+                app:srcCompat="@drawable/ic_purble" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_redlight"
-                android:tint="@color/red0"/>
+                android:tint="@color/red0"
+                app:srcCompat="@drawable/ic_redlight" />
         </LinearLayout>
 
         <LinearLayout
@@ -193,8 +194,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_darkred2"
-                android:tint="@color/pink"/>
+                android:tint="@color/pink"
+                app:srcCompat="@drawable/ic_darkred2" />
 
             <ImageView
                 android:layout_width="0dp"

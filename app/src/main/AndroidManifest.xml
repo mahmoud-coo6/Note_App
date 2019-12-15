@@ -14,9 +14,11 @@
         <activity android:name=".Edit_Page3Activity" />
         <activity android:name=".Confirmation_messageActivity" />
         <activity android:name=".Forgot_passwordActivity" />
-        <activity android:name=".singupActivity" />
+        <activity android:name=".SingupActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".Notebook_tutorial_2" android:parentActivityName=".Notebook_tutorial_1"></activity>
+        <activity
+            android:name=".Notebook_tutorial_2"
+            android:parentActivityName=".Notebook_tutorial_1"></activity>
         <activity android:name=".Notebook_tutorial_1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

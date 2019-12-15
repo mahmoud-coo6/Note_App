@@ -2,42 +2,43 @@
 <LinearLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Confirmation_messageActivity"
     android:orientation="vertical"
-    >
+    tools:context=".Confirmation_messageActivity">
+
     <LinearLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="45dp"
-        android:id="@+id/line"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal">
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
-        <ImageView
-            android:paddingVertical="18dp"
-            android:paddingHorizontal="11dp"
+            android:layout_weight="1" />
 
-            android:src="@drawable/ic_close"
-            android:layout_alignParentEnd="true"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="18dp"
+            android:src="@drawable/ic_close"
 
             />
 
 
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -46,22 +47,22 @@
         android:layout_marginTop="10dp"
 
         android:src="@drawable/ic_mail" />
+
     <LinearLayout
-        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="vertical">
-
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="31dp"
             android:gravity="center"
             android:lineSpacingExtra="20dp"
             android:text="@string/check_mail"
-            android:layout_gravity="center"
 
             android:textColor="@color/black"
 
@@ -79,9 +80,9 @@
             android:layout_marginTop="36dp"
             android:layout_marginEnd="17dp"
             android:layout_marginRight="20dp"
+            android:gravity="center"
             android:lineSpacingExtra="20dp"
             android:text="@string/reset_email"
-            android:gravity="center"
             android:textColor="@color/black"
 
             android:textSize="16dp"
@@ -93,32 +94,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        />
+        android:orientation="horizontal" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
-
-
+        android:layout_weight="1" />
 
 
     <Button
         android:id="@+id/signupBtn"
-        android:textStyle="bold"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/go_to_mail"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-        android:background="@drawable/but_sing"
         android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="15dp"
         android:layout_marginBottom="24dp"
+        android:background="@drawable/but_sing"
+        android:text="@string/go_to_mail"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textFontWeight="400"
         android:textSize="16dp"
-        />
+        android:textStyle="bold" />
 
 
 </LinearLayout>

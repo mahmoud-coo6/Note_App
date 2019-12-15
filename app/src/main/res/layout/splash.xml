@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical"
-    android:weightSum="2">
+    android:weightSum="2"
+    tools:context=".MainActivity">
 
 
     <RelativeLayout
@@ -21,70 +21,67 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_tutorial"
-            android:scaleType="center"/>
+            android:scaleType="center"
+            app:srcCompat="@drawable/ic_tutorial" />
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_book"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:src="@drawable/image_book" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image"
-        android:orientation="vertical">
+        app:layout_constraintTop_toBottomOf="@id/image">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="26sp"
-            android:textColor="#7b1e58"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
             android:lineSpacingExtra="9sp"
-            android:gravity="center_horizontal"
-            android:text="Notebooks"
-            android:layout_gravity="center"
             android:padding="8dp"
-            />
+            android:text="Notebooks"
+            android:textColor="#7b1e58"
+            android:textSize="26sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="#9b9faa"
-            android:lineSpacingExtra="8sp"
-            android:gravity="center_horizontal"
-            android:text="Notebooks are the best place to manage your Notes  "
             android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="8sp"
             android:paddingStart="44dp"
             android:paddingEnd="44dp"
-            />
+            android:text="Notebooks are the best place to manage your Notes  "
+            android:textColor="#9b9faa"
+            android:textSize="18sp" />
 
 
-    <ImageView
-        android:id="@+id/singinBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/primary_button"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        />
+        <ImageView
+            android:id="@+id/singinBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/primary_button" />
 
         <TextView
             android:id="@+id/singupTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign up"
-            android:textColor="#1A1824"
-            android:padding="8dp"
-            android:gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            />
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Sign up"
+            android:textColor="#1A1824" />
 
 
     </LinearLayout>

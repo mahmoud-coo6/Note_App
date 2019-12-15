@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/cancel"
@@ -35,10 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            app:srcCompat="@drawable/ic_links_notebook"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_links_notebook"
 
             />
 
@@ -50,12 +49,11 @@
             android:layout_marginTop="80dp"
             android:layout_marginEnd="48dp"
             android:scaleType="center"
-            app:srcCompat="@drawable/pickershap"
             app:layout_constraintEnd_toEndOf="@+id/book"
-            app:layout_constraintTop_toTopOf="@+id/book" />
+            app:layout_constraintTop_toTopOf="@+id/book"
+            app:srcCompat="@drawable/pickershap" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
     <EditText
@@ -75,13 +73,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:background="@drawable/ic_save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
         android:text="save"
         android:textColor="@android:color/white"
-        android:layout_marginTop="32dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
     </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>

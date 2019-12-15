@@ -8,6 +8,13 @@ public class Notes {
     String color;
     Date date;
 
+    public Notes(String title, String body, String color, Date date) {
+        this.title = title;
+        this.body = body;
+        this.color = color;
+        this.date = date;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -37,16 +44,6 @@ public class Notes {
     }
 
     public void setDate(Date date) {
-        this.date = date;
-    }
-
-
-
-
-    public Notes(String title, String body, String color, Date date) {
-        this.title = title;
-        this.body = body;
-        this.color = color;
         this.date = date;
     }
 }

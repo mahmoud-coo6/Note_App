@@ -3,95 +3,100 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_marginHorizontal="15dp"
     android:orientation="vertical"
-    android:layout_height="match_parent"
-    tools:context=".singupActivity">
+    tools:context=".SingupActivity">
 
-    <LinearLayout android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="45dp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="45dp"
 
         android:orientation="horizontal">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
             android:paddingHorizontal="11dp"
             android:paddingVertical="18dp"
             android:paddingStart="23dp"
-            android:layout_weight="7"
-            android:textSize="14dp"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/Signin"
-            />
-        <ImageView
-            android:paddingHorizontal="11dp"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
 
-            android:paddingVertical="18dp"
-            android:layout_weight="1"
+        <ImageView
+            android:id="@+id/image_close"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="18dp"
 
-            android:src="@drawable/ic_close"/>
+            android:src="@drawable/ic_close" />
     </LinearLayout>
+
     <TextView
-        android:textStyle="bold"
-        android:paddingTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="21dp"
-        android:textSize="24dp"
+        android:paddingTop="5dp"
         android:text="@string/intro_singup"
-        android:layout_width="match_parent"
         android:textColor="#1A1824"
-        android:layout_height="wrap_content" />
-    <EditText
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
-        android:layout_marginHorizontal="30dp"
-        android:textColorHint="@color/emai_pass_hint"
-        android:layout_marginTop="19dp"
-        app:backgroundTint="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/email"
-        />
     <EditText
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="19dp"
-        app:backgroundTint="@color/black"
+        android:id="@+id/emailEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="19dp"
+        android:hint="@string/email"
+        android:textColorHint="@color/emai_pass_hint"
+        app:backgroundTint="@color/black" />
+
+    <EditText
+        android:id="@+id/passwordEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="19dp"
         android:hint="@string/password"
         android:textColorHint="@color/emai_pass_hint"
-        />
+        app:backgroundTint="@color/black" />
 
     <View
-        android:layout_marginTop="15dp"
-        android:layout_marginHorizontal="30dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1" />
 
     <TextView
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="14dp"
-        android:textColor="@color/black_text"
-        android:layout_marginBottom="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/by_sing"/>
-    <Button
-        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="@string/by_sing"
+        android:textColor="@color/black_text"
+        android:textSize="14dp" />
 
-        android:layout_marginHorizontal="30dp"
-        android:textColor="@color/white"
-        android:background="@drawable/but_sing"
-        android:layout_marginBottom="16dp"
+    <Button
+        android:id="@+id/singupBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/singup"/>
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/but_sing"
+        android:text="@string/singup"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
 
 </LinearLayout>

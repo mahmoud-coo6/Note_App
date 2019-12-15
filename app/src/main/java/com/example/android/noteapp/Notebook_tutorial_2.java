@@ -16,8 +16,8 @@ public class Notebook_tutorial_2 extends AppCompatActivity {
         setContentView(R.layout.notebook_tutorial_2);
         // Perhaps set content view here
 
-        TextView skipTV= findViewById(R.id.skip);
-        TextView nextTV= findViewById(R.id.next);
+        TextView skipTV = findViewById(R.id.skip);
+        TextView nextTV = findViewById(R.id.next);
 
         skipTV.setOnClickListener(new View.OnClickListener() {
             @Override

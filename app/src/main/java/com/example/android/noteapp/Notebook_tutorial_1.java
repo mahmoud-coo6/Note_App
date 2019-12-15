@@ -19,8 +19,8 @@ public class Notebook_tutorial_1 extends AppCompatActivity {
 
         prefs = getSharedPreferences("com.example.android.noteapp", MODE_PRIVATE);
 
-        TextView skipTV= findViewById(R.id.skip);
-        TextView nextTV= findViewById(R.id.next);
+        TextView skipTV = findViewById(R.id.skip);
+        TextView nextTV = findViewById(R.id.next);
 
         skipTV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,9 +47,9 @@ public class Notebook_tutorial_1 extends AppCompatActivity {
 
         if (prefs.getBoolean("firstrun", true)) {
             prefs.edit().putBoolean("firstrun", false).apply();
-        }else{
-//            Intent intent= new Intent(this, MainActivity.class);
-//            startActivity(intent);
+        } else {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
     }
 }

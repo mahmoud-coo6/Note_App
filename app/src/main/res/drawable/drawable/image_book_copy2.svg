@@ -1,35 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="168" viewBox="0 0 120 168">
+<svg height="168"
+    viewBox="0 0 120 168"
+    width="120"
+    xmlns="http://www.w3.org/2000/svg">
     <defs>
         <style>
-            .cls-1{fill:url(#linear-gradient)}.cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:3px;mix-blend-mode:multiply;isolation:isolate}.cls-3{fill:#fff}.cls-4{fill:#4a4a4a;font-size:12px;font-family:SegoeUI,Segoe UI;letter-spacing:-.004em}.cls-5{filter:url(#Book)}
+            .cls-1{fill:url(#linear-gradient)}.cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:3px;mix-blend-mode:multiply;isolation:isolate}.cls-3{fill:#fff}.cls-4{fill:#4a4a4a;font-size:12px;font-family:SegoeUI,Segoe
+            UI;letter-spacing:-.004em}.cls-5{filter:url(#Book)}
         </style>
-        <linearGradient id="linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="#fad961"/>
-            <stop offset="1" stop-color="#f76b1c"/>
+        <linearGradient
+            gradientUnits="objectBoundingBox"
+            id="linear-gradient"
+            x1=".5"
+            x2=".5"
+            y2="1">
+            <stop
+                offset="0"
+                stop-color="#fad961" />
+            <stop
+                offset="1"
+                stop-color="#f76b1c" />
         </linearGradient>
-        <filter id="Book" width="120" height="153" x="0" y="0" filterUnits="userSpaceOnUse">
-            <feOffset dy="3"/>
-            <feGaussianBlur result="blur" stdDeviation="3"/>
-            <feFlood flood-opacity=".216"/>
-            <feComposite in2="blur" operator="in"/>
-            <feComposite in="SourceGraphic"/>
+        <filter
+            filterUnits="userSpaceOnUse"
+            height="153"
+            id="Book"
+            width="120"
+            x="0"
+            y="0">
+            <feOffset dy="3" />
+            <feGaussianBlur
+                result="blur"
+                stdDeviation="3" />
+            <feFlood flood-opacity=".216" />
+            <feComposite
+                in2="blur"
+                operator="in" />
+            <feComposite in="SourceGraphic" />
         </filter>
     </defs>
-    <g id="Image_Book_Copy" data-name="Image Book Copy" transform="translate(9 6)">
-        <g id="Book-2" data-name="Book">
-            <g class="cls-5" transform="translate(-9 -6)">
-                <path id="Book-3" d="M2 0h95a5 5 0 0 1 5 5v125a5 5 0 0 1-5 5H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" class="cls-1" data-name="Book" transform="translate(9 6)"/>
+    <g
+        data-name="Image Book Copy"
+        id="Image_Book_Copy"
+        transform="translate(9 6)">
+        <g
+            data-name="Book"
+            id="Book-2">
+            <g
+                class="cls-5"
+                transform="translate(-9 -6)">
+                <path
+                    class="cls-1"
+                    d="M2 0h95a5 5 0 0 1 5 5v125a5 5 0 0 1-5 5H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"
+                    data-name="Book"
+                    id="Book-3"
+                    transform="translate(9 6)" />
             </g>
-            <path id="Book-4" d="M2 0h95a5 5 0 0 1 5 5v125a5 5 0 0 1-5 5H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" class="cls-2" data-name="Book"/>
+            <path
+                class="cls-2"
+                d="M2 0h95a5 5 0 0 1 5 5v125a5 5 0 0 1-5 5H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"
+                data-name="Book"
+                id="Book-4" />
         </g>
-        <path id="Rectangle_4" d="M0 0h7v135H0z" class="cls-3" data-name="Rectangle 4" transform="translate(86)"/>
-        <g id="Group_2" data-name="Group 2" transform="translate(10 123)">
-            <rect id="Rectangle_5" width="8" height="2" class="cls-3" data-name="Rectangle 5" rx="1"/>
-            <rect id="Rectangle_5-2" width="8" height="2" class="cls-3" data-name="Rectangle 5" rx="1" transform="translate(10)"/>
-            <rect id="Rectangle_5-3" width="8" height="2" class="cls-3" data-name="Rectangle 5" rx="1" transform="translate(20)"/>
+        <path
+            class="cls-3"
+            d="M0 0h7v135H0z"
+            data-name="Rectangle 4"
+            id="Rectangle_4"
+            transform="translate(86)" />
+        <g
+            data-name="Group 2"
+            id="Group_2"
+            transform="translate(10 123)">
+            <rect
+                class="cls-3"
+                data-name="Rectangle 5"
+                height="2"
+                id="Rectangle_5"
+                rx="1"
+                width="8" />
+            <rect
+                class="cls-3"
+                data-name="Rectangle 5"
+                height="2"
+                id="Rectangle_5-2"
+                rx="1"
+                transform="translate(10)"
+                width="8" />
+            <rect
+                class="cls-3"
+                data-name="Rectangle 5"
+                height="2"
+                id="Rectangle_5-3"
+                rx="1"
+                transform="translate(20)"
+                width="8" />
         </g>
-        <text id="Class_lessons" class="cls-4" data-name="Class lessons" transform="translate(13 146)">
-            <tspan x="2.717" y="13">Class lessons</tspan>
+        <text
+            class="cls-4"
+            data-name="Class lessons"
+            id="Class_lessons"
+            transform="translate(13 146)">
+            <tspan
+                x="2.717"
+                y="13">Class lessons
+            </tspan>
         </text>
     </g>
 </svg>

@@ -11,32 +11,31 @@
         android:id="@+id/header1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:weightSum="2">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitStart"
-            android:layout_height="wrap_content"
             app:srcCompat="@drawable/navbox" />
 
         <TextView
             android:id="@+id/edit"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:textColor="#7b1e58"
             android:layout_gravity="end|center"
+            android:layout_weight="1"
             android:gravity="end"
-            tools:text="Edit"
-            />
+            android:textColor="#7b1e58"
+            android:textSize="17sp"
+            tools:text="Edit" />
     </LinearLayout>
 
 
@@ -56,92 +55,90 @@
 
     <View
         android:id="@+id/divider1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/browser"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="16dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/browser" />
 
 
     <LinearLayout
         android:id="@+id/header2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider1"
-        android:weightSum="2">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1">
 
         <TextView
             android:id="@+id/notbook"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#000000"
+            android:layout_weight="1"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="7sp"
-            tools:text="Notebooks"
-            />
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:text="Notebooks" />
 
         <TextView
             android:id="@+id/showall"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#7b1e58"
+            android:layout_gravity="end|center"
+            android:layout_weight="1"
+            android:gravity="end"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="5sp"
-            tools:text="Show All"
-            android:layout_gravity="end|center"
-            android:gravity="end"
-            />
+            android:textColor="#7b1e58"
+            android:textSize="16sp"
+            tools:text="Show All" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/imagelist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
-        app:layout_constraintTop_toBottomOf="@id/header2"
-        android:weightSum="3">
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header2">
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_add_notebook"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:layout_marginTop="10dp"/>
+            app:srcCompat="@drawable/ic_add_notebook" />
 
         <ImageView
             android:id="@+id/centernote"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_links_notebook"
+            android:layout_weight="1"
             android:tint="@color/purple"
-            android:tintMode="screen"/>
+            android:tintMode="screen"
+            app:srcCompat="@drawable/ic_links_notebook" />
 
         <ImageView
             android:id="@+id/centernote1"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_links_notebook"
+            android:layout_weight="1"
             android:tint="@color/orange"
-            android:tintMode="screen"/>
+            android:tintMode="screen"
+            app:srcCompat="@drawable/ic_links_notebook" />
 
 
     </LinearLayout>
@@ -150,80 +147,79 @@
         android:id="@+id/imagenamelist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        app:layout_constraintTop_toBottomOf="@id/imagelist"
-        android:weightSum="3">
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagelist">
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
-            android:textColor="#7b1e58"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:lineSpacingExtra="4sp"
-            android:gravity="center_horizontal"
-            tools:text="Create Notebook"/>
+            android:textColor="#7b1e58"
+            android:textSize="13sp"
+            tools:text="Create Notebook" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="#4a4a4a"
-            android:lineSpacingExtra="5sp"
+            android:layout_weight="1"
             android:gravity="center_horizontal"
-            tools:text="Weekend Plans"/>
+            android:lineSpacingExtra="5sp"
+            android:textColor="#4a4a4a"
+            android:textSize="15sp"
+            tools:text="Weekend Plans" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="#4a4a4a"
-            android:lineSpacingExtra="5sp"
+            android:layout_weight="1"
             android:gravity="center_horizontal"
-            tools:text="To-Do"/>
+            android:lineSpacingExtra="5sp"
+            android:textColor="#4a4a4a"
+            android:textSize="15sp"
+            tools:text="To-Do" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/header3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imagenamelist"
-        android:weightSum="2">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagenamelist">
 
         <TextView
             android:id="@+id/notes"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#000000"
+            android:layout_weight="1"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="7sp"
-            tools:text="Notes"
-            />
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:text="Notes" />
 
         <TextView
             android:id="@+id/showall2"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#7b1e58"
+            android:layout_gravity="end|center"
+            android:layout_weight="1"
+            android:gravity="end"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="5sp"
+            android:textColor="#7b1e58"
+            android:textSize="16sp"
             tools:text="Show All"
-            android:layout_gravity="end|center"
-            android:gravity="end"
 
             />
     </LinearLayout>
@@ -233,17 +229,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#f9f9f9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header3"
-        android:backgroundTint="#f9f9f9">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header3">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="16dp"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -253,38 +248,38 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="3"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:textColor="#000000"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="5sp"
-                    tools:text="Trip to San fran"
+                    android:layout_weight="3"
                     android:drawableStart="@drawable/ic_oval_6"
                     android:drawablePadding="16dp"
-                    android:drawableTint="@color/purple"/>
+                    android:drawableTint="@color/purple"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="5sp"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    tools:text="Trip to San fran" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#4a4a4a"
+                    android:layout_weight="1"
+                    android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
-                    tools:text="18/06/12"
-                    android:gravity="end"/>
+                    android:textColor="#4a4a4a"
+                    android:textSize="12sp"
+                    tools:text="18/06/12" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:textColor="#4d5468"
-                android:letterSpacing="0.01"
                 android:layout_marginTop="8dp"
+                android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:textColor="#4d5468"
+                android:textSize="13sp"
                 tools:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -294,17 +289,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#f9f9f9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/note1"
-        android:backgroundTint="#f9f9f9">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="16dp"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -314,37 +308,37 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="3"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:textColor="#000000"
+                    android:layout_weight="3"
+                    android:drawableStart="@drawable/ic_oval_5"
+                    android:drawablePadding="16dp"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
-                    tools:text="Shopping list"
-                    android:drawableStart="@drawable/ic_oval_5"
-                    android:drawablePadding="16dp" />
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    tools:text="Shopping list" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#4a4a4a"
+                    android:layout_weight="1"
+                    android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
-                    tools:text="18/06/12"
-                    android:gravity="end"/>
+                    android:textColor="#4a4a4a"
+                    android:textSize="12sp"
+                    tools:text="18/06/12" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:textColor="#4d5468"
-                android:letterSpacing="0.01"
                 android:layout_marginTop="8dp"
+                android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:textColor="#4d5468"
+                android:textSize="13sp"
                 tools:text="So far, this is what we need for our trip:" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -354,17 +348,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#f9f9f9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/note2"
-        android:backgroundTint="#f9f9f9">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="16dp"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -374,38 +367,38 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="3"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:textColor="#000000"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="5sp"
-                    tools:text="Trip to San fran"
+                    android:layout_weight="3"
                     android:drawableStart="@drawable/ic_oval_6"
                     android:drawablePadding="16dp"
-                    android:drawableTint="@color/purple"/>
+                    android:drawableTint="@color/purple"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="5sp"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    tools:text="Trip to San fran" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#4a4a4a"
+                    android:layout_weight="1"
+                    android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
-                    tools:text="18/06/12"
-                    android:gravity="end"/>
+                    android:textColor="#4a4a4a"
+                    android:textSize="12sp"
+                    tools:text="18/06/12" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:textColor="#4d5468"
-                android:letterSpacing="0.01"
                 android:layout_marginTop="8dp"
+                android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:textColor="#4d5468"
+                android:textSize="13sp"
                 tools:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

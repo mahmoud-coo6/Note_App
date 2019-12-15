@@ -1,8 +1,5 @@
 package com.example.android.noteapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,9 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView text_singinTv,forgetTv;
-            EditText email_logEt,password_logEt;
-            ImageView image_close_login;
+    TextView text_singinTv, forgetTv;
+    EditText email_logEt, password_logEt;
+    ImageView image_close_login;
     Button loginButon;
     FirebaseAuth mAuth;
 
@@ -30,46 +30,45 @@ public class LoginActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        String email ,password;
+        String email, password;
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-        if (user!=null)
-        {
-            Intent intent = new Intent(LoginActivity.this ,home_pages.class);
+        if (user != null) {
+            Intent intent = new Intent(LoginActivity.this, home_pages.class);
             startActivity(intent);
         }
 
-//        email_logEt = findViewById(R.id.email_logEt);
-//        password_logEt = findViewById(R.id.password_logEt);
-//        loginButon = findViewById(R.id.loginButon);
-//        image_close_login = (ImageView)findViewById(R.id.image_close_login);
-//        if(" ".equals(email_logEt.getText().toString())) {
-//            email_logEt.setError("worng email");
-//            return;
-//        }
-//        if(password_logEt.getText().toString().equals(" ")) {
-//            password_logEt.setError("worng password");
-//            return ;
-//        }
-//        findViewById(R.id.text_singinTv).setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(LoginActivity.this, home_pages.class);
-//                startActivity(intent);
-//
-//            }
-//        });
-//        findViewById(R.id.forgetTv).setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(LoginActivity.this, Forgot_passwordActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+        email_logEt = findViewById(R.id.email_logEt);
+        password_logEt = findViewById(R.id.password_logEt);
+        loginButon = findViewById(R.id.loginButon);
+        image_close_login = findViewById(R.id.image_close_login);
+        if (" ".equals(email_logEt.getText().toString())) {
+            email_logEt.setError("worng email");
+            return;
+        }
+        if (password_logEt.getText().toString().equals(" ")) {
+            password_logEt.setError("worng password");
+            return;
+        }
 
+        loginButon.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, home_pages.class);
+                startActivity(intent);
+
+            }
+        });
+        findViewById(R.id.forgetTv).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, Forgot_passwordActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
         image_close_login.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +104,8 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
 
-                    }});
+                    }
+                });
     }
 }
 
