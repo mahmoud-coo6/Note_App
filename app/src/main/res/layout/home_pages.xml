@@ -35,7 +35,7 @@
             android:gravity="end"
             android:textColor="#7b1e58"
             android:textSize="17sp"
-            tools:text="Edit" />
+            android:text="Edit" />
     </LinearLayout>
 
 
@@ -51,7 +51,7 @@
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header1"
-        tools:text="Browse" />
+        android:text="Browse" />
 
     <View
         android:id="@+id/divider1"
@@ -85,7 +85,7 @@
             android:lineSpacingExtra="7sp"
             android:textColor="#000000"
             android:textSize="20sp"
-            tools:text="Notebooks" />
+            android:text="Notebooks" />
 
         <TextView
             android:id="@+id/showall"
@@ -98,7 +98,7 @@
             android:lineSpacingExtra="5sp"
             android:textColor="#7b1e58"
             android:textSize="16sp"
-            tools:text="Show All" />
+            android:text="Show All" />
     </LinearLayout>
 
     <LinearLayout
@@ -128,8 +128,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:tint="@color/purple"
-            android:tintMode="screen"
             app:srcCompat="@drawable/ic_links_notebook" />
 
         <ImageView
@@ -164,7 +162,7 @@
             android:lineSpacingExtra="4sp"
             android:textColor="#7b1e58"
             android:textSize="13sp"
-            tools:text="Create Notebook" />
+            android:text="Create Notebook" />
 
         <TextView
             android:layout_width="0dp"
@@ -174,7 +172,7 @@
             android:lineSpacingExtra="5sp"
             android:textColor="#4a4a4a"
             android:textSize="15sp"
-            tools:text="Weekend Plans" />
+            android:text="Weekend Plans" />
 
         <TextView
             android:layout_width="0dp"
@@ -184,7 +182,7 @@
             android:lineSpacingExtra="5sp"
             android:textColor="#4a4a4a"
             android:textSize="15sp"
-            tools:text="To-Do" />
+            android:text="To-Do" />
     </LinearLayout>
 
     <LinearLayout
@@ -207,7 +205,7 @@
             android:lineSpacingExtra="7sp"
             android:textColor="#000000"
             android:textSize="20sp"
-            tools:text="Notes" />
+            android:text="Notes" />
 
         <TextView
             android:id="@+id/showall2"
@@ -220,7 +218,7 @@
             android:lineSpacingExtra="5sp"
             android:textColor="#7b1e58"
             android:textSize="16sp"
-            tools:text="Show All"
+            android:text="Show All"
 
             />
     </LinearLayout>
@@ -258,7 +256,7 @@
                     android:lineSpacingExtra="5sp"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    tools:text="Trip to San fran" />
+                    android:text="Trip to San fran" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -269,7 +267,7 @@
                     android:lineSpacingExtra="4sp"
                     android:textColor="#4a4a4a"
                     android:textSize="12sp"
-                    tools:text="18/06/12" />
+                    android:text="18/06/12" />
 
             </LinearLayout>
 
@@ -281,7 +279,7 @@
                 android:lineSpacingExtra="4sp"
                 android:textColor="#4d5468"
                 android:textSize="13sp"
-                tools:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
+                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -317,7 +315,7 @@
                     android:lineSpacingExtra="5sp"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    tools:text="Shopping list" />
+                    android:text="Shopping list" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -328,7 +326,7 @@
                     android:lineSpacingExtra="4sp"
                     android:textColor="#4a4a4a"
                     android:textSize="12sp"
-                    tools:text="18/06/12" />
+                    android:text="18/06/12" />
 
             </LinearLayout>
 
@@ -340,7 +338,7 @@
                 android:lineSpacingExtra="4sp"
                 android:textColor="#4d5468"
                 android:textSize="13sp"
-                tools:text="So far, this is what we need for our trip:" />
+                android:text="So far, this is what we need for our trip:" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -377,7 +375,7 @@
                     android:lineSpacingExtra="5sp"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    tools:text="Trip to San fran" />
+                    android:text="Trip to San fran" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -388,7 +386,7 @@
                     android:lineSpacingExtra="4sp"
                     android:textColor="#4a4a4a"
                     android:textSize="12sp"
-                    tools:text="18/06/12" />
+                    android:text="18/06/12" />
 
             </LinearLayout>
 
@@ -400,7 +398,7 @@
                 android:lineSpacingExtra="4sp"
                 android:textColor="#4d5468"
                 android:textSize="13sp"
-                tools:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
+                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
