@@ -115,6 +115,7 @@
         app:layout_constraintTop_toBottomOf="@id/header2">
 
         <ImageView
+            android:id="@+id/addcatagory_img"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

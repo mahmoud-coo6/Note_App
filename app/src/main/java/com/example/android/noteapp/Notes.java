@@ -2,13 +2,15 @@ package com.example.android.noteapp;
 
 import java.util.Date;
 
+
 public class Notes {
     String title;
     String body;
-    String color;
+    Color color;
     Date date;
 
-    public Notes(String title, String body, String color, Date date) {
+
+    public Notes(String title, String body, Color color, Date date) {
         this.title = title;
         this.body = body;
         this.color = color;
@@ -31,11 +33,11 @@ public class Notes {
         this.body = body;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
