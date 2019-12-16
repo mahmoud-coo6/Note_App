@@ -1,7 +1,11 @@
 package com.example.android.noteapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,10 +28,10 @@ public class SingupActivity extends AppCompatActivity {
     ImageView image_close;
     Button singupBt;
     FirebaseAuth mAuth;
+    private static final String TAG = "SingupActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         String email, password;
 
         super.onCreate(savedInstanceState);
@@ -43,24 +47,6 @@ public class SingupActivity extends AppCompatActivity {
         passwordEt = findViewById(R.id.passwordEt);
         singupBt = findViewById(R.id.singupBt);
         image_close = (ImageView) findViewById(R.id.image_close);
-        if (" ".equals(emailEt.getText().toString())) {
-            emailEt.setError("worng email");
-            return;
-        }
-        if (passwordEt.getText().toString().equals(" ")) {
-            passwordEt.setError("worng password");
-            return;
-        }
-
-        singupBt.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SingupActivity.this, LoginActivity.class);
-                startActivity(intent);
-
-            }
-        });
 
 
         image_close.setOnClickListener(new View.OnClickListener() {
@@ -75,9 +61,39 @@ public class SingupActivity extends AppCompatActivity {
         singupBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doSignUp(emailEt.getText().toString(), passwordEt.getText().toString());
+
+                if ("".equals(emailEt.getText().toString().trim())) {
+                    emailEt.setError("worng email");
+                    return;
+                }
+                if (passwordEt.getText().toString().trim().equals("")) {
+                    passwordEt.setError("worng password");
+                    return;
+                }
+
+                if (isNetworkAvailable()) {
+                    doSignUp(emailEt.getText().toString(), passwordEt.getText().toString());
+                }else{
+                    Toast.makeText(SingupActivity.this, "please, check internet connection.", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
+
+        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SingupActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     private void doSignUp(String email, String password) {
@@ -87,13 +103,20 @@ public class SingupActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(SingupActivity.this, "Success SignUp.", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SingupActivity.this, MainActivity.class);
                             startActivity(intent);
 
 
                         } else {
-                            Toast.makeText(SingupActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            try {
+                                task.getResult();
+                                    Toast.makeText(SingupActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
+
+                                           }catch (Exception e){
+                                Toast.makeText(SingupActivity.this, e.getMessage().split(":")[1], Toast.LENGTH_SHORT).show();
+                            }
+
                         }
 
                     }

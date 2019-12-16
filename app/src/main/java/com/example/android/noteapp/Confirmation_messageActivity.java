@@ -8,18 +8,16 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Confirmation_messageActivity extends AppCompatActivity {
-    Button signupBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation_message);
-        signupBtn.findViewById(R.id.signupBtn).setOnClickListener(new View.OnClickListener() {
+            findViewById(R.id.signupBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mailClient = new Intent(Intent.ACTION_VIEW);
-                mailClient.setClassName("com.google.android.gm", "com.google.android.gm.ConversationListActivity");
-                startActivity(mailClient);
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.google.android.gm");
+                startActivity(intent);
 
             }
         });
