@@ -7,6 +7,7 @@ public class User {
     String email;
     ArrayList<Categraty> categraty;
 
+
     public User(Integer id, String email, ArrayList<Categraty> categraty) {
         this.id = id;
         this.email = email;
