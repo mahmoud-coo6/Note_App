@@ -1,6 +1,6 @@
 package com.example.android.noteapp;
 
- public enum Color {
+public enum Color {
     darkgreen,
     blue,
     lighgreen,

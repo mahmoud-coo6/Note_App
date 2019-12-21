@@ -70,9 +70,9 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="19dp"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:textColorHint="@color/emai_pass_hint"
-        app:backgroundTint="@color/black"
-        android:inputType="textPassword"/>
+        app:backgroundTint="@color/black" />
 
     <View
         android:layout_width="match_parent"

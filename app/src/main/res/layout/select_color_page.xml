@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    tools:context=".NoteEditActivity"
     android:layout_height="match_parent">
 
     <TextView
@@ -14,11 +13,11 @@
         android:layout_marginEnd="16dp"
         android:letterSpacing="-0.02"
         android:lineSpacingExtra="5sp"
+        android:text="cancel"
         android:textColor="#4a4a4a"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="cancel" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -30,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@id/cancel">
 
         <ImageView
-            android:id="@+id/category_nameTv"
+            android:id="@+id/category_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -42,32 +41,33 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <EditText
-        android:id="@+id/textView"
+    <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:letterSpacing="0.01"
         android:lineSpacingExtra="6sp"
+        android:text="My diary "
         android:textColor="#4a4a4a"
-
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        android:text="My diary " />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <Button
         android:id="@+id/saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/but_sing"
         android:text="save"
         android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/FrameLayout1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/title">
 
     </Button>
 
@@ -75,18 +75,18 @@
         android:id="@+id/FrameLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="8dp"
         android:background="#ffffff"
         android:orientation="vertical"
-        android:paddingStart="64dp"
-        android:paddingTop="48dp"
-        android:paddingEnd="64dp"
-        android:paddingBottom="48dp"
+        android:paddingStart="54dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="54dp"
+        android:paddingBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/saveBtn"
         app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
@@ -96,101 +96,125 @@
             android:weightSum="4">
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tint="@color/purple"
-                app:srcCompat="@drawable/ic_oval_4" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tint="@color/lighgreen"
-                app:srcCompat="@drawable/ic_green" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_red" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tint="@color/blue2"
-                app:srcCompat="@drawable/ic_bluegreen" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="24dp"
-            android:weightSum="4">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tint="@color/orange"
-                app:srcCompat="@drawable/ic_orange" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tint="@color/blue3"
-                app:srcCompat="@drawable/ic_blue" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tint="@color/red2"
-                app:srcCompat="@drawable/ic_purble" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tint="@color/red0"
-                app:srcCompat="@drawable/ic_redlight" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="24dp"
-            android:weightSum="4">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tint="@color/pink"
-                app:srcCompat="@drawable/ic_darkred2" />
-
-            <ImageView
+                android:id="@+id/color1"
+                android:onClick="selectColor"
+                android:tag="ic_darkblue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_darkblue" />
 
             <ImageView
+                android:id="@+id/color2"
+                android:onClick="selectColor"
+                android:tag="ic_green"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_darkred2" />
+                app:srcCompat="@drawable/ic_green" />
+
+            <ImageView
+                android:id="@+id/color3"
+                android:onClick="selectColor"
+                android:tag="ic_red"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_red" />
+
+            <ImageView
+                android:id="@+id/color4"
+                android:layout_width="0dp"
+                android:onClick="selectColor"
+                android:tag="ic_bluegreen"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_bluegreen" />
+        </LinearLayout>
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="24dp"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/color5"
+                android:layout_width="0dp"
+                android:onClick="selectColor"
+                android:tag="ic_orange"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_orange" />
 
             <ImageView
                 android:layout_width="0dp"
+                android:onClick="selectColor"
+                android:tag="ic_blue"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_blue" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:onClick="selectColor"
+                android:tag="ic_purble"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_purble" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:onClick="selectColor"
+                android:tag="ic_redlight"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_redlight" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="24dp"
+            android:weightSum="4">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:onClick="selectColor"
+                android:tag="ic_darkred2"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tint="@color/pink"
+                app:srcCompat="@drawable/ic_darkred2" />
+
+            <ImageView
+                android:onClick="selectColor"
+                android:tag="ic_move"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_move" />
+
+            <ImageView
+                android:onClick="selectColor"
+                android:tag="darksred5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/darksred5" />
+
+            <ImageView
+                android:onClick="selectColor"
+                android:tag="ic_gray"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_gray" />
         </LinearLayout>
     </LinearLayout>
 

@@ -17,18 +17,25 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class SingupActivity extends AppCompatActivity {
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+public class SingUp extends AppCompatActivity {
+    private static final String TAG = "SingUp";
     EditText passwordEt, emailEt;
     TextView text_singTv;
     ImageView image_close;
     Button singupBt;
     FirebaseAuth mAuth;
-    private static final String TAG = "SingupActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +47,9 @@ public class SingupActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         if (user != null) {
-            Intent intent = new Intent(SingupActivity.this, home_pages.class);
+            Intent intent = new Intent(SingUp.this, home_pages.class);
             startActivity(intent);
+            finish();
         }
         emailEt = findViewById(R.id.emailEt);
         passwordEt = findViewById(R.id.passwordEt);
@@ -52,9 +60,9 @@ public class SingupActivity extends AppCompatActivity {
         image_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SingupActivity.this, MainActivity.class);
+                Intent intent = new Intent(SingUp.this, MainActivity.class);
                 startActivity(intent);
-
+                finish();
 
             }
         });
@@ -73,8 +81,8 @@ public class SingupActivity extends AppCompatActivity {
 
                 if (isNetworkAvailable()) {
                     doSignUp(emailEt.getText().toString(), passwordEt.getText().toString());
-                }else{
-                    Toast.makeText(SingupActivity.this, "please, check internet connection.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(SingUp.this, "please, check internet connection.", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -83,8 +91,9 @@ public class SingupActivity extends AppCompatActivity {
         findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SingupActivity.this, LoginActivity.class);
+                Intent intent = new Intent(SingUp.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -100,25 +109,44 @@ public class SingupActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password).
                 addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(@NonNull final Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(SingupActivity.this, "Success SignUp.", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(SingupActivity.this, MainActivity.class);
-                            startActivity(intent);
+                            Toast.makeText(SingUp.this, "Success SignUp.", Toast.LENGTH_SHORT).show();
 
+                            String emailF = user.getEmail();
+                            String uid = user.getUid();
+                            Map<String, Object> data = new HashMap<>();
+                            data.put("uid", uid);
+                            data.put("email", emailF);
+                            data.put("createdAt", new Date().getTime());
+
+                            FirebaseDatabase.getInstance().getReference().child("User").child(uid).setValue(data)
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(SingUp.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                                            Log.d("error", e.getLocalizedMessage());
+                                        }
+                                    })
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Intent intent = new Intent(SingUp.this, home_pages.class);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    });
 
                         } else {
                             try {
                                 task.getResult();
-                                    Toast.makeText(SingupActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SingUp.this, "Authentication failed", Toast.LENGTH_SHORT).show();
 
-                                           }catch (Exception e){
-                                Toast.makeText(SingupActivity.this, e.getMessage().split(":")[1], Toast.LENGTH_SHORT).show();
+                            } catch (Exception e) {
+                                Toast.makeText(SingUp.this, e.getMessage().split(":")[1], Toast.LENGTH_SHORT).show();
                             }
-
                         }
-
                     }
                 });
     }

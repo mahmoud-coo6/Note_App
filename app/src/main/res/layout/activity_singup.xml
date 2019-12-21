@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SingupActivity">
+    tools:context=".SingUp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,8 +66,8 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="19dp"
         android:hint="@string/password"
-        android:textColorHint="@color/emai_pass_hint"
         android:inputType="textPassword"
+        android:textColorHint="@color/emai_pass_hint"
         app:backgroundTint="@color/black" />
 
     <View

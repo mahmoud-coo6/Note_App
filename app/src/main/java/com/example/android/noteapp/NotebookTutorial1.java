@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Notebook_tutorial_1 extends AppCompatActivity {
+public class NotebookTutorial1 extends AppCompatActivity {
     SharedPreferences prefs = null;
 
     @Override
@@ -25,7 +25,7 @@ public class Notebook_tutorial_1 extends AppCompatActivity {
         skipTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Notebook_tutorial_1.this, MainActivity.class);
+                Intent intent = new Intent(NotebookTutorial1.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -33,7 +33,7 @@ public class Notebook_tutorial_1 extends AppCompatActivity {
         nextTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Notebook_tutorial_1.this, Notebook_tutorial_2.class);
+                Intent intent = new Intent(NotebookTutorial1.this, NotebookTutorial2.class);
                 startActivity(intent);
             }
         });

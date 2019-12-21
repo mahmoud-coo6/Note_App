@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".NoteEditActivity">
+    tools:context=".NoteList">
 
     <ImageView
         android:id="@+id/header1"
@@ -79,9 +79,9 @@
                     android:drawableTint="@color/purple"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
+                    android:text="Trip to San fran"
                     android:textColor="#000000"
-                    android:textSize="17sp"
-                    android:text="Trip to San fran" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -90,9 +90,9 @@
                     android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
+                    android:text="18/06/12"
                     android:textColor="#4a4a4a"
-                    android:textSize="12sp"
-                    android:text="18/06/12" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -102,9 +102,9 @@
                 android:layout_marginTop="8dp"
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …"
                 android:textColor="#4d5468"
-                android:textSize="13sp"
-                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
+                android:textSize="13sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -138,9 +138,9 @@
                     android:drawablePadding="16dp"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
+                    android:text="Shopping list"
                     android:textColor="#000000"
-                    android:textSize="17sp"
-                    android:text="Shopping list" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -149,9 +149,9 @@
                     android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
+                    android:text="18/06/12"
                     android:textColor="#4a4a4a"
-                    android:textSize="12sp"
-                    android:text="18/06/12" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -161,9 +161,9 @@
                 android:layout_marginTop="8dp"
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:text="So far, this is what we need for our trip:"
                 android:textColor="#4d5468"
-                android:textSize="13sp"
-                android:text="So far, this is what we need for our trip:" />
+                android:textSize="13sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -198,9 +198,9 @@
                     android:drawableTint="@color/purple"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
+                    android:text="Trip to San fran"
                     android:textColor="#000000"
-                    android:textSize="17sp"
-                    android:text="Trip to San fran" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -209,9 +209,9 @@
                     android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
+                    android:text="18/06/12"
                     android:textColor="#4a4a4a"
-                    android:textSize="12sp"
-                    android:text="18/06/12" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -221,9 +221,9 @@
                 android:layout_marginTop="8dp"
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …"
                 android:textColor="#4d5468"
-                android:textSize="13sp"
-                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
+                android:textSize="13sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -258,9 +258,9 @@
                     android:drawablePadding="16dp"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
+                    android:text="Shopping list"
                     android:textColor="#000000"
-                    android:textSize="17sp"
-                    android:text="Shopping list" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -269,9 +269,9 @@
                     android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
+                    android:text="18/06/12"
                     android:textColor="#4a4a4a"
-                    android:textSize="12sp"
-                    android:text="18/06/12" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -281,9 +281,9 @@
                 android:layout_marginTop="8dp"
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:text="So far, this is what we need for our trip:"
                 android:textColor="#4d5468"
-                android:textSize="13sp"
-                android:text="So far, this is what we need for our trip:" />
+                android:textSize="13sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

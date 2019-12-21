@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/purple"
     android:orientation="vertical"
-    tools:context=".Edit_Page3Activity">
+    tools:context=".EditNoteColor">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -123,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:tint="@color/purple"
-                app:srcCompat="@drawable/ic_oval_4" />
+                app:srcCompat="@drawable/ic_darkblue" />
 
             <ImageView
                 android:layout_width="0dp"

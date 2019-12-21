@@ -26,15 +26,15 @@ public class Forgot_passwordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
-         forgetBtn=findViewById(R.id.recover_password);
-         emailTv = findViewById(R.id.emailEt);
+        forgetBtn = findViewById(R.id.recover_password);
+        emailTv = findViewById(R.id.emailEt);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-        if (user!=null)
-        {
-            Intent intent = new Intent(Forgot_passwordActivity.this ,home_pages.class);
+        if (user != null) {
+            Intent intent = new Intent(Forgot_passwordActivity.this, home_pages.class);
             startActivity(intent);
+            finish();
         }
 
 
@@ -42,10 +42,10 @@ public class Forgot_passwordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if("".equals(emailTv.getText().toString().trim())) {
-                emailTv.setError("worng email");
-                return;
-            }
+                if ("".equals(emailTv.getText().toString().trim())) {
+                    emailTv.setError("worng email");
+                    return;
+                }
 
                 forgetpassword(emailTv.getText().toString());
             }
@@ -56,9 +56,9 @@ public class Forgot_passwordActivity extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener() {
                             @Override
                             public void onSuccess(Object o) {
-                                Toast.makeText(Forgot_passwordActivity.this, "please check your email: "+email, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Forgot_passwordActivity.this, "please check your email: " + email, Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(Forgot_passwordActivity.this, Confirmation_messageActivity.class);
+                                Intent intent = new Intent(Forgot_passwordActivity.this, ConfirmationMessage.class);
                                 startActivity(intent);
 
                             }
@@ -73,9 +73,9 @@ public class Forgot_passwordActivity extends AppCompatActivity {
                     }
 
 
-            });            }
+                });
+            }
         });
-
 
 
     }

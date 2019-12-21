@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.noteapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 
@@ -13,18 +13,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NoteEditActivity" android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Edit1Activity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Edit_Page3Activity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Confirmation_messageActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Forgot_passwordActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".SingupActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".Notebook_tutorial_2"
-            android:parentActivityName=".Notebook_tutorial_1"
+            android:name=".NoteList"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Notebook_tutorial_1"
+        <activity
+            android:name=".EditNote"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditNoteColor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ConfirmationMessage"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Forgot_passwordActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SingUp"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NotebookTutorial2"
+            android:parentActivityName=".NotebookTutorial1"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".NotebookTutorial1"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,8 +51,20 @@
             android:name=".home_pages"
             android:label="@string/title_activity_home_pages"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity" android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
 
+        </activity>
+
+        <activity
+            android:name=".CreateNoteCategory"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".SelectCategoryColor"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

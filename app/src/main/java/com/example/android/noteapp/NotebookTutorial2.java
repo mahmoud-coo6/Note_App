@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Notebook_tutorial_2 extends AppCompatActivity {
+public class NotebookTutorial2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,16 +22,18 @@ public class Notebook_tutorial_2 extends AppCompatActivity {
         skipTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Notebook_tutorial_2.this, MainActivity.class);
+                Intent intent = new Intent(NotebookTutorial2.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         nextTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Notebook_tutorial_2.this, MainActivity.class);
+                Intent intent = new Intent(NotebookTutorial2.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

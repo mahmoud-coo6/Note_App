@@ -27,15 +27,15 @@
             app:srcCompat="@drawable/navbox" />
 
         <TextView
-            android:id="@+id/edit"
+            android:id="@+id/signout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center"
             android:layout_weight="1"
             android:gravity="end"
+            android:text="SignOut"
             android:textColor="#7b1e58"
-            android:textSize="17sp"
-            android:text="Edit" />
+            android:textSize="17sp" />
     </LinearLayout>
 
 
@@ -47,11 +47,11 @@
         android:layout_marginTop="16dp"
         android:letterSpacing="0.01"
         android:lineSpacingExtra="7sp"
+        android:text="Browse"
         android:textColor="#000000"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header1"
-        android:text="Browse" />
+        app:layout_constraintTop_toBottomOf="@id/header1" />
 
     <View
         android:id="@+id/divider1"
@@ -83,9 +83,9 @@
             android:layout_weight="1"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="7sp"
+            android:text="Notebooks"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:text="Notebooks" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/showall"
@@ -96,10 +96,13 @@
             android:gravity="end"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="5sp"
+            android:text="Show All"
             android:textColor="#7b1e58"
-            android:textSize="16sp"
-            android:text="Show All" />
+            android:textSize="16sp" />
     </LinearLayout>
+
+
+
 
     <LinearLayout
         android:id="@+id/imagelist"
@@ -114,76 +117,111 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header2">
 
-        <ImageView
+        <LinearLayout
             android:id="@+id/addcatagory_img"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_add_notebook" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/centernote"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_add_notebook" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Create Notebook"
+                        android:layout_gravity="center"
+                        android:textColor="#7b1e58"
+                        android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_rv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_links_notebook" />
-
-        <ImageView
-            android:id="@+id/centernote1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:tint="@color/orange"
-            android:tintMode="screen"
-            app:srcCompat="@drawable/ic_links_notebook" />
-
+            android:layout_weight="2"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/imagenamelist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imagelist">
+<!--        <ImageView-->
+<!--            android:id="@+id/centernote"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            app:srcCompat="@drawable/ic_links_notebook"/>-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:lineSpacingExtra="4sp"
-            android:textColor="#7b1e58"
-            android:textSize="13sp"
-            android:text="Create Notebook" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:lineSpacingExtra="5sp"
-            android:textColor="#4a4a4a"
-            android:textSize="15sp"
-            android:text="Weekend Plans" />
+<!--&lt;!&ndash;        <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/centernote"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_weight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:srcCompat="@drawable/ic_links_notebook"/>&ndash;&gt;-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:lineSpacingExtra="5sp"
-            android:textColor="#4a4a4a"
-            android:textSize="15sp"
-            android:text="To-Do" />
-    </LinearLayout>
+<!--        <ImageView-->
+<!--            android:id="@+id/centernote1"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:tint="@color/orange"-->
+<!--            android:tintMode="screen"-->
+<!--            app:srcCompat="@drawable/ic_links_notebook" />-->
+
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/imagenamelist"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="3"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/imagelist">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:lineSpacingExtra="4sp"-->
+<!--            android:text="Create Notebook"-->
+<!--            android:textColor="#7b1e58"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:lineSpacingExtra="5sp"-->
+<!--            android:text="Weekend Plans"-->
+<!--            android:textColor="#4a4a4a"-->
+<!--            android:textSize="15sp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:lineSpacingExtra="5sp"-->
+<!--            android:text="To-Do"-->
+<!--            android:textColor="#4a4a4a"-->
+<!--            android:textSize="15sp" />-->
+<!--    </LinearLayout>-->
 
     <LinearLayout
         android:id="@+id/header3"
@@ -194,7 +232,7 @@
         android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imagenamelist">
+        app:layout_constraintTop_toBottomOf="@id/imagelist">
 
         <TextView
             android:id="@+id/notes"
@@ -203,9 +241,9 @@
             android:layout_weight="1"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="7sp"
+            android:text="Notes"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:text="Notes" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/showall2"
@@ -216,9 +254,9 @@
             android:gravity="end"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="5sp"
+            android:text="Show All"
             android:textColor="#7b1e58"
             android:textSize="16sp"
-            android:text="Show All"
 
             />
     </LinearLayout>
@@ -254,9 +292,9 @@
                     android:drawableTint="@color/purple"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
+                    android:text="Trip to San fran"
                     android:textColor="#000000"
-                    android:textSize="17sp"
-                    android:text="Trip to San fran" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -265,9 +303,9 @@
                     android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
+                    android:text="18/06/12"
                     android:textColor="#4a4a4a"
-                    android:textSize="12sp"
-                    android:text="18/06/12" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -277,9 +315,9 @@
                 android:layout_marginTop="8dp"
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …"
                 android:textColor="#4d5468"
-                android:textSize="13sp"
-                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
+                android:textSize="13sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -313,9 +351,9 @@
                     android:drawablePadding="16dp"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
+                    android:text="Shopping list"
                     android:textColor="#000000"
-                    android:textSize="17sp"
-                    android:text="Shopping list" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -324,9 +362,9 @@
                     android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
+                    android:text="18/06/12"
                     android:textColor="#4a4a4a"
-                    android:textSize="12sp"
-                    android:text="18/06/12" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -336,9 +374,9 @@
                 android:layout_marginTop="8dp"
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:text="So far, this is what we need for our trip:"
                 android:textColor="#4d5468"
-                android:textSize="13sp"
-                android:text="So far, this is what we need for our trip:" />
+                android:textSize="13sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -373,9 +411,9 @@
                     android:drawableTint="@color/purple"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="5sp"
+                    android:text="Trip to San fran"
                     android:textColor="#000000"
-                    android:textSize="17sp"
-                    android:text="Trip to San fran" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -384,9 +422,9 @@
                     android:gravity="end"
                     android:letterSpacing="0.01"
                     android:lineSpacingExtra="4sp"
+                    android:text="18/06/12"
                     android:textColor="#4a4a4a"
-                    android:textSize="12sp"
-                    android:text="18/06/12" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -396,9 +434,9 @@
                 android:layout_marginTop="8dp"
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="4sp"
+                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …"
                 android:textColor="#4d5468"
-                android:textSize="13sp"
-                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …" />
+                android:textSize="13sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -416,4 +454,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,24 +1,22 @@
 package com.example.android.noteapp;
 
-import java.util.ArrayList;
-
 public class User {
-    Integer id;
+    String id;
     String email;
-    ArrayList<Categraty> categraty;
+    String categoryId;
 
 
-    public User(Integer id, String email, ArrayList<Categraty> categraty) {
+    public User(String id, String email, String categoryId) {
         this.id = id;
         this.email = email;
-        this.categraty = categraty;
+        this.categoryId = categoryId;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -30,12 +28,12 @@ public class User {
         this.email = email;
     }
 
-    public ArrayList<Categraty> getCategraty() {
-        return categraty;
+    public String getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategraty(ArrayList<Categraty> categraty) {
-        this.categraty = categraty;
+    public void setCategratyId(String categoryId) {
+        this.categoryId = categoryId;
     }
 }
 

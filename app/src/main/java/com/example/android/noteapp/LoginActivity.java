@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         if (user != null) {
             Intent intent = new Intent(LoginActivity.this, home_pages.class);
             startActivity(intent);
+            finish();
         }
 
         email_logEt = findViewById(R.id.email_logEt);
@@ -60,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, Forgot_passwordActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -70,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
-
+                finish();
 
             }
         });
@@ -89,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (isNetworkAvailable()) {
                     doSignIn(email_logEt.getText().toString(), password_logEt.getText().toString());
-                }else{
+                } else {
                     Toast.makeText(LoginActivity.this, "please, check internet connection.", Toast.LENGTH_SHORT).show();
                 }
 
@@ -99,8 +101,9 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.signup).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, SingupActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SingUp.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -121,37 +124,33 @@ public class LoginActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(LoginActivity.this, "Success Login.", Toast.LENGTH_SHORT).show();
 
-                            Map<String,Object> data = new HashMap<>();
-                            data.put("lastSignIn",new Date().getTime());
+                            Map<String, Object> data = new HashMap<>();
+                            data.put("lastSignIn", new Date().getTime());
 
                             FirebaseDatabase.getInstance().getReference().child("User").child(user.getUid()).updateChildren(data)
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
                                             Toast.makeText(LoginActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                                            Log.d("error",e.getLocalizedMessage());
+                                            Log.d("error", e.getLocalizedMessage());
                                         }
                                     })
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
-                                            Intent intent = new Intent(LoginActivity.this , MainActivity.class);
+                                            Intent intent = new Intent(LoginActivity.this, home_pages.class);
                                             startActivity(intent);
+                                            finish();
                                         }
                                     });
 
 
-                            Intent intent = new Intent(LoginActivity.this, home_pages.class);
-                            startActivity(intent);
-
-
                         } else {
-//                            Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                             try {
                                 task.getResult();
                                 Toast.makeText(LoginActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
 
-                            }catch (Exception e){
+                            } catch (Exception e) {
                                 Toast.makeText(LoginActivity.this, e.getMessage().split(":")[1], Toast.LENGTH_SHORT).show();
                             }
                         }
