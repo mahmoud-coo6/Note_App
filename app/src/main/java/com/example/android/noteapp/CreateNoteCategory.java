@@ -28,6 +28,7 @@ public class CreateNoteCategory extends AppCompatActivity {
     ImageView changeColor, book;
     boolean saved= false;
     EditText title;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class CreateNoteCategory extends AppCompatActivity {
         book= findViewById(R.id.book);
         title= findViewById(R.id.category_title);
 
-        final Intent intent= getIntent();
+        intent= getIntent();
         if (intent != null){
         ArrayList<Category> items= intent.getParcelableArrayListExtra(CategrayAdapter.CATEGORY_TRANSFER);
             if (items != null) {
@@ -83,27 +84,22 @@ public class CreateNoteCategory extends AppCompatActivity {
                 if(saved){
                     Map<String, Object> data = new HashMap<>();
                     data.put("lastUpdate", new Date().getTime());
-                    data.put("color",getColor());
-                    data.put("title",(intent.getStringExtra("CategoryId")== null) ?
-                            createNewNote()
-                            :intent.getStringExtra("title"));
+                    data.put("title",intent.getStringExtra("title"));
 
 
                     FirebaseDatabase.getInstance().getReference().child("Category").child(
-                            (intent.getStringExtra("CategoryId")== null) ?
-                                    createNewNote()
-                                    :intent.getStringExtra("CategoryId")).updateChildren(data)
+                            intent.getStringExtra("CategoryId")).updateChildren(data)
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(SelectCategoryColor.this, "update category color faild", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CreateNoteCategory.this, "update category color faild", Toast.LENGTH_SHORT).show();
 
                                 }
                             })
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Intent intent = new Intent(SelectCategoryColor.this, home_pages.class);
+                                    Intent intent = new Intent(CreateNoteCategory.this, home_pages.class);
                                     startActivity(intent);
                                     finish();
                                 }
