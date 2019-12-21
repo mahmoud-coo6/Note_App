@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -42,141 +42,151 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/notebooks" />
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/category_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="395dp"
         android:layout_marginTop="16dp"
-        android:orientation="vertical"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search">
+        app:layout_constraintTop_toBottomOf="@id/search" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3">
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/search">-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_image_bluebook" />
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:weightSum="3">-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_image_orangebook" />
+    <!--            <ImageView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                app:srcCompat="@drawable/ic_image_bluebook" />-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_image_purblebook" />
+    <!--            <ImageView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                app:srcCompat="@drawable/ic_image_orangebook" />-->
 
-        </LinearLayout>
+    <!--            <ImageView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                app:srcCompat="@drawable/ic_image_purblebook" />-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3">
+    <!--        </LinearLayout>-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:lineSpacingExtra="4sp"
-                android:text="My Links"
-                android:textColor="#4a4a4a"
-                android:textSize="12sp" />
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:weightSum="3">-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:lineSpacingExtra="4sp"
-                android:text="Class lessons"
-                android:textColor="#4a4a4a"
-                android:textSize="12sp" />
+    <!--            <TextView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:gravity="center_horizontal"-->
+    <!--                android:lineSpacingExtra="4sp"-->
+    <!--                android:text="My Links"-->
+    <!--                android:textColor="#4a4a4a"-->
+    <!--                android:textSize="12sp" />-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:lineSpacingExtra="4sp"
-                android:text="Homeworks"
-                android:textColor="#4a4a4a"
-                android:textSize="12sp" />
-        </LinearLayout>
+    <!--            <TextView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:gravity="center_horizontal"-->
+    <!--                android:lineSpacingExtra="4sp"-->
+    <!--                android:text="Class lessons"-->
+    <!--                android:textColor="#4a4a4a"-->
+    <!--                android:textSize="12sp" />-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+    <!--            <TextView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:gravity="center_horizontal"-->
+    <!--                android:lineSpacingExtra="4sp"-->
+    <!--                android:text="Homeworks"-->
+    <!--                android:textColor="#4a4a4a"-->
+    <!--                android:textSize="12sp" />-->
+    <!--        </LinearLayout>-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_image_redbook" />
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="16dp"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:weightSum="3">-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_image_greenbook_copy" />
+    <!--            <ImageView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_weight="1"-->
+    <!--                app:srcCompat="@drawable/ic_image_redbook" />-->
 
-        </LinearLayout>
+    <!--            <ImageView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                app:srcCompat="@drawable/ic_image_greenbook_copy" />-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3">
+    <!--        </LinearLayout>-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:lineSpacingExtra="4sp"
-                android:text="Todos"
-                android:textColor="#4a4a4a"
-                android:textSize="12sp" />
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:weightSum="3">-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:lineSpacingExtra="4sp"
-                android:text="Notes"
-                android:textColor="#4a4a4a"
-                android:textSize="12sp" />
+    <!--            <TextView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:gravity="center_horizontal"-->
+    <!--                android:lineSpacingExtra="4sp"-->
+    <!--                android:text="Todos"-->
+    <!--                android:textColor="#4a4a4a"-->
+    <!--                android:textSize="12sp" />-->
 
-        </LinearLayout>
-    </LinearLayout>
+    <!--            <TextView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:gravity="center_horizontal"-->
+    <!--                android:lineSpacingExtra="4sp"-->
+    <!--                android:text="Notes"-->
+    <!--                android:textColor="#4a4a4a"-->
+    <!--                android:textSize="12sp" />-->
+
+    <!--        </LinearLayout>-->
+    <!--    </LinearLayout>-->
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/fab"
         android:tint="@android:color/white"
         app:backgroundTint="#3D0F54"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

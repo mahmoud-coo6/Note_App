@@ -17,8 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -49,15 +47,15 @@ public class home_pages extends AppCompatActivity {
 //        VectorDrawableCompat.VFullPath path1 = vector.findPathByName("path1");
 //        path1.setFillColor(getResources().getColor(android.R.color.holo_red_light));
 
-        if(isNetworkAvailable()){
+        if (isNetworkAvailable()) {
             initData();
-        }else{
+        } else {
             Toast.makeText(this, "there is no interent connection.", Toast.LENGTH_SHORT).show();
         }
 
         RecyclerView recyclerView = findViewById(R.id.category_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        categrayAdapter = new CategrayAdapter(this ,categoryList);
+        categrayAdapter = new CategrayAdapter(this, categoryList);
         recyclerView.setAdapter(categrayAdapter);
 
         findViewById(R.id.signout).setOnClickListener(new View.OnClickListener() {
@@ -71,16 +69,16 @@ public class home_pages extends AppCompatActivity {
 
         if (currentUser != null) {
 
-            FloatingActionButton fab = findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(home_pages.this, NoteList.class);
-                    startActivity(intent);
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
+//            FloatingActionButton fab = findViewById(R.id.fab);
+//            fab.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent intent = new Intent(home_pages.this, NoteList.class);
+//                    startActivity(intent);
+//                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                            .setAction("Action", null).show();
+//                }
+//            });
 
 
             findViewById(R.id.addcatagory_img).setOnClickListener(new View.OnClickListener() {
@@ -91,6 +89,15 @@ public class home_pages extends AppCompatActivity {
                     startActivity(intent);
                     finish();
 
+                }
+            });
+
+            findViewById(R.id.show_all_category).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(home_pages.this, CategoryList.class);
+                    startActivity(intent);
+                    finish();
                 }
             });
 
@@ -114,7 +121,7 @@ public class home_pages extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         categoryList.clear();
-                        for(DataSnapshot snapshot: dataSnapshot.getChildren() ){
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
                             Category category = snapshot.getValue(Category.class);
                             categoryList.add(category);

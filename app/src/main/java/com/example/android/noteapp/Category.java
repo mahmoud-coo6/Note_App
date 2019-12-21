@@ -4,13 +4,24 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Category implements Parcelable {
+    public static final Parcelable.Creator<Category> CREATOR = new Parcelable.Creator<Category>() {
+        @Override
+        public Category createFromParcel(Parcel source) {
+            return new Category(source);
+        }
+
+        @Override
+        public Category[] newArray(int size) {
+            return new Category[size];
+        }
+    };
     String id;
     String title;
     int color;
     long createdAt;
     long lastUpdate;
 
-    public Category(){
+    public Category() {
 
     }
 
@@ -19,7 +30,15 @@ public class Category implements Parcelable {
         this.title = title;
         this.color = color;
         this.createdAt = createdAt;
-        this.lastUpdate=lastUpdate;
+        this.lastUpdate = lastUpdate;
+    }
+
+    protected Category(Parcel in) {
+        this.id = in.readString();
+        this.title = in.readString();
+        this.color = in.readInt();
+        this.createdAt = in.readLong();
+        this.lastUpdate = in.readLong();
     }
 
     public String getId() {
@@ -37,7 +56,6 @@ public class Category implements Parcelable {
     public void setTitle(String title) {
         this.title = title;
     }
-
 
     public int getColor() {
         return color;
@@ -76,25 +94,5 @@ public class Category implements Parcelable {
         dest.writeLong(this.createdAt);
         dest.writeLong(this.lastUpdate);
     }
-
-    protected Category(Parcel in) {
-        this.id = in.readString();
-        this.title = in.readString();
-        this.color = in.readInt();
-        this.createdAt = in.readLong();
-        this.lastUpdate = in.readLong();
-    }
-
-    public static final Parcelable.Creator<Category> CREATOR = new Parcelable.Creator<Category>() {
-        @Override
-        public Category createFromParcel(Parcel source) {
-            return new Category(source);
-        }
-
-        @Override
-        public Category[] newArray(int size) {
-            return new Category[size];
-        }
-    };
 }
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -97,38 +96,38 @@
 
             <ImageView
                 android:id="@+id/color1"
-                android:onClick="selectColor"
-                android:tag="ic_darkblue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_darkblue"
                 app:srcCompat="@drawable/ic_darkblue" />
 
             <ImageView
                 android:id="@+id/color2"
-                android:onClick="selectColor"
-                android:tag="ic_green"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_green"
                 app:srcCompat="@drawable/ic_green" />
 
             <ImageView
                 android:id="@+id/color3"
-                android:onClick="selectColor"
-                android:tag="ic_red"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_red"
                 app:srcCompat="@drawable/ic_red" />
 
             <ImageView
                 android:id="@+id/color4"
                 android:layout_width="0dp"
-                android:onClick="selectColor"
-                android:tag="ic_bluegreen"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_bluegreen"
                 app:srcCompat="@drawable/ic_bluegreen" />
         </LinearLayout>
 
@@ -144,34 +143,34 @@
             <ImageView
                 android:id="@+id/color5"
                 android:layout_width="0dp"
-                android:onClick="selectColor"
-                android:tag="ic_orange"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_orange"
                 app:srcCompat="@drawable/ic_orange" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:onClick="selectColor"
-                android:tag="ic_blue"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_blue"
                 app:srcCompat="@drawable/ic_blue" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:onClick="selectColor"
-                android:tag="ic_purble"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_purble"
                 app:srcCompat="@drawable/ic_purble" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:onClick="selectColor"
-                android:tag="ic_redlight"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_redlight"
                 app:srcCompat="@drawable/ic_redlight" />
         </LinearLayout>
 
@@ -185,35 +184,35 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:onClick="selectColor"
-                android:tag="ic_darkred2"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_darkred2"
                 android:tint="@color/pink"
                 app:srcCompat="@drawable/ic_darkred2" />
 
             <ImageView
-                android:onClick="selectColor"
-                android:tag="ic_move"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_move"
                 app:srcCompat="@drawable/ic_move" />
 
             <ImageView
-                android:onClick="selectColor"
-                android:tag="darksred5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="darksred5"
                 app:srcCompat="@drawable/darksred5" />
 
             <ImageView
-                android:onClick="selectColor"
-                android:tag="ic_gray"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="selectColor"
+                android:tag="ic_gray"
                 app:srcCompat="@drawable/ic_gray" />
         </LinearLayout>
     </LinearLayout>

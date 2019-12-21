@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
+    android:id="@+id/empty_list"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/category_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/ic_links_notebook" />
-
-    <TextView
-        android:id="@+id/category_name"
+        android:id="@+id/createicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:lineSpacingExtra="5sp"
-        android:text="Weekend Plans"
-        android:textColor="#4a4a4a"
-        android:textSize="15sp" />
+        android:layout_marginTop="88dp"
+        app:srcCompat="@drawable/ic_rectangle3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="64dp"
+        android:text="Let’s create a Note together"
+        android:textColor="#9B9B9B" />
 
 </LinearLayout>

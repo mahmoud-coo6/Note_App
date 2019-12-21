@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CategoryList">
 
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
@@ -13,51 +16,28 @@
         android:focusableInTouchMode="true"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/header1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/navbox" />
-
-            <TextView
-                android:id="@+id/signout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:text=""
-                android:textColor="#7b1e58"
-                android:textSize="17sp" />
-        </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/notes"
+        <ImageView
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_group" />
+
+        <TextView
+            android:id="@+id/notebooks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="7sp"
-            android:text="Notes"
+            android:text="Notebooks"
             android:textColor="#000000"
             android:textSize="34sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header1" />
+            app:layout_constraintTop_toBottomOf="@id/back" />
 
         <EditText
             android:id="@+id/search"
@@ -70,7 +50,7 @@
             android:hint="Search"
             android:padding="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/notes" />
+            app:layout_constraintTop_toBottomOf="@id/notebooks" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/category_rv"
@@ -82,7 +62,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search" />
-
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
