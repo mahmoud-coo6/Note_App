@@ -4,11 +4,11 @@ public class Note {
     String id;
     String title;
     String body;
-    Color color;
+    int color;
     long createdAt;
     long lastUpdate;
 
-    public Note(String id, String title, String body, Color color, long createdAt, long lastUpdate) {
+    public Note(String id, String title, String body, int color, long createdAt, long lastUpdate) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -41,11 +41,11 @@ public class Note {
         this.body = body;
     }
 
-    public Color getColor() {
+    public int getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(int color) {
         this.color = color;
     }
 
