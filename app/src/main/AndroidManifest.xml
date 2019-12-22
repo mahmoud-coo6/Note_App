@@ -12,18 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity
             android:name=".NoteList"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EditNote"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".EditNoteColor"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ConfirmationMessage"
@@ -69,6 +63,12 @@
 
         <activity
             android:name=".CategoryNote"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".NoteSelectColor"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ViewArtBoard"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

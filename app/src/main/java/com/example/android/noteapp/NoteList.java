@@ -1,55 +1,124 @@
 package com.example.android.noteapp;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class NoteList extends AppCompatActivity {
-    Button saveBtn;
-    EditText category_nameTv;
+
+    NotesAdapter noteAdapter;
+    List<Note> noteList = new ArrayList<>();
+    DatabaseReference mSearchedReference;
+    EditText search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.note_list);
-        findViewById(R.id.saveBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                category_nameTv = findViewById(R.id.textView);
-                String name_catage = category_nameTv.getText().toString();
-                FirebaseAuth mAuth;
-                mAuth = FirebaseAuth.getInstance();
-                //catogory  information
-//                 public Category(String id, String title, String body, Color color, long createdAt) {
 
-//                Category categraty=new Category(name_catage, 2,Color.blue2,null);
-//                ArrayList<Category> categraties=new ArrayList<Category>();
-//                categraties.add(categraty);
+        if (isNetworkAvailable()) {
+            initData();
+        } else {
+            Toast.makeText(this, "there is no interent connection.", Toast.LENGTH_SHORT).show();
+        }
 
-                //id auto genurate
-//                User user=new User(1,mAuth.getCurrentUser().getEmail(),categraties);
+        RecyclerView recyclerView = findViewById(R.id.category_rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        noteAdapter = new NotesAdapter(this, noteList);
+        recyclerView.setAdapter(noteAdapter);
 
-//                FirebaseDatabase.getInstance().getReference("Users").
-//                        child(mAuth.getCurrentUser().getUid()).setValue(user)
-//                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                                  @Override
-//                                                  public void onSuccess(Void aVoid) {
-//                                                      Toast.makeText(NoteList.this, "the catogory is done add", Toast.LENGTH_SHORT).show();
-//                                                  }
-//
-//                                              });
+        search = findViewById(R.id.search);
+        search.addTextChangedListener(new TextWatcher() {
 
+            public void afterTextChanged(Editable s) {
+                // you can call or do what you want with your EditText here
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                initSearch(search.getText().toString());
             }
         });
 
+    }
 
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 
+    private void initData() {
+        DatabaseReference scoresRef =  FirebaseDatabase.getInstance().getReference();
+        scoresRef.child("Note")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        noteList.clear();
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                            Note note = snapshot.getValue(Note.class);
+                            noteList.add(note);
+
+                        }
+                        noteAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+        scoresRef.keepSynced(true);
+    }
+
+    private void initSearch(final String search) {
+        FirebaseDatabase.getInstance().getReference().child("Note")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        noteList.clear();
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                            Note note = snapshot.getValue(Note.class);
+                            if (note.getTitle().toLowerCase().contains(search.toLowerCase()) || search.trim().length() == 0) {
+                                noteList.add(note);
+                            }
+                        }
+                        noteAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+    }
 }
 

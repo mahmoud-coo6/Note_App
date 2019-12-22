@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -28,10 +29,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class home_pages extends AppCompatActivity {
-    ImageView addcatagory_img;
     FirebaseAuth mAuth;
     CategrayAdapter categrayAdapter;
     List<Category> categoryList = new ArrayList<>();
+    NotesAdapter notesAdapter;
+    List<Note> noteList = new ArrayList<>();
 
     @SuppressLint("ResourceAsColor")
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -42,13 +44,9 @@ public class home_pages extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
-//        ImageView ivVectorImage = findViewById(R.id.centernote);
-//        VectorChildFinder vector = new VectorChildFinder(this, R.drawable.ic_links_notebook, ivVectorImage);
-//        VectorDrawableCompat.VFullPath path1 = vector.findPathByName("path1");
-//        path1.setFillColor(getResources().getColor(android.R.color.holo_red_light));
-
         if (isNetworkAvailable()) {
             initData();
+            initNoteData();
         } else {
             Toast.makeText(this, "there is no interent connection.", Toast.LENGTH_SHORT).show();
         }
@@ -57,6 +55,11 @@ public class home_pages extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         categrayAdapter = new CategrayAdapter(this, categoryList);
         recyclerView.setAdapter(categrayAdapter);
+
+        RecyclerView noteRecyclerView = findViewById(R.id.note_rv);
+        noteRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        notesAdapter = new NotesAdapter(this, noteList);
+        noteRecyclerView.setAdapter(notesAdapter);
 
         findViewById(R.id.signout).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,18 +71,6 @@ public class home_pages extends AppCompatActivity {
         });
 
         if (currentUser != null) {
-
-//            FloatingActionButton fab = findViewById(R.id.fab);
-//            fab.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    Intent intent = new Intent(home_pages.this, NoteList.class);
-//                    startActivity(intent);
-//                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                            .setAction("Action", null).show();
-//                }
-//            });
-
 
             findViewById(R.id.addcatagory_img).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -101,6 +92,14 @@ public class home_pages extends AppCompatActivity {
                 }
             });
 
+            findViewById(R.id.show_all_note).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(home_pages.this, NoteList.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
 
         } else {
             throw new Error("cont do this function");
@@ -115,7 +114,8 @@ public class home_pages extends AppCompatActivity {
     }
 
     private void initData() {
-        FirebaseDatabase.getInstance().getReference().child("Category")
+        DatabaseReference scoresRef =  FirebaseDatabase.getInstance().getReference();
+                scoresRef.child("Category")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -135,7 +135,32 @@ public class home_pages extends AppCompatActivity {
 
                     }
                 });
+        scoresRef.keepSynced(true);
+    }
 
+    private void initNoteData() {
+        DatabaseReference scoresRef =  FirebaseDatabase.getInstance().getReference();
+        scoresRef.child("Note")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        noteList.clear();
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                            Note note = snapshot.getValue(Note.class);
+                            noteList.add(note);
+
+                        }
+                        notesAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+        scoresRef.keepSynced(true);
     }
 }
 

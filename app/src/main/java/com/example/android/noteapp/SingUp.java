@@ -39,7 +39,6 @@ public class SingUp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String email, password;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup);

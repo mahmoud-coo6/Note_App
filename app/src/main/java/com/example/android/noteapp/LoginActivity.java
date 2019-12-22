@@ -30,7 +30,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView text_singinTv, forgetTv;
     EditText email_logEt, password_logEt;
     ImageView image_close_login;
     Button loginButon;
@@ -41,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        String email, password;
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {

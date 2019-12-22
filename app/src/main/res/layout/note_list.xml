@@ -1,302 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".NoteList">
-
-    <ImageView
-        android:id="@+id/header1"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_rectangle4" />
+    tools:context=".CategoryList">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".NoteList">
 
+        <ImageView
+            android:id="@+id/header1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="16dp"
+            app:srcCompat="@drawable/ic_rectangle4" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="400"
-            android:letterSpacing="0.41"
-            android:lineHeight="41dp"
-            android:text="Notes"
-            android:textColor="#000000"
-            android:textSize="34dp" />
-
-        <EditText
-            android:id="@+id/search"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_searchfield"
-            android:drawableStart="@drawable/ic_searchicon"
-            android:drawablePadding="16dp"
-            android:hint="Search"
-            android:padding="8dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="16dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="400"
+                android:lineHeight="41dp"
+                android:text="Notes"
+                android:textColor="#000000"
+                android:textSize="34dp" />
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_searchfield"
+                android:drawableStart="@drawable/ic_searchicon"
+                android:drawablePadding="16dp"
+                android:hint="Search"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notes" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/notes" />
+            app:layout_constraintTop_toBottomOf="@id/search" />
+
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/note1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:backgroundTint="#f9f9f9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#f9f9f9"
-                android:weightSum="4">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:drawableStart="@drawable/ic_oval_6"
-                    android:drawablePadding="16dp"
-                    android:drawableTint="@color/purple"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="5sp"
-                    android:text="Trip to San fran"
-                    android:textColor="#000000"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="4sp"
-                    android:text="18/06/12"
-                    android:textColor="#4a4a4a"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:letterSpacing="0.01"
-                android:lineSpacingExtra="4sp"
-                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …"
-                android:textColor="#4d5468"
-                android:textSize="13sp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/note2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:backgroundTint="#f9f9f9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/note1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#f9f9f9"
-                android:weightSum="4">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:drawableStart="@drawable/ic_oval_5"
-                    android:drawablePadding="16dp"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="5sp"
-                    android:text="Shopping list"
-                    android:textColor="#000000"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="4sp"
-                    android:text="18/06/12"
-                    android:textColor="#4a4a4a"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:letterSpacing="0.01"
-                android:lineSpacingExtra="4sp"
-                android:text="So far, this is what we need for our trip:"
-                android:textColor="#4d5468"
-                android:textSize="13sp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/note3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:backgroundTint="#f9f9f9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/note2">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#f9f9f9"
-                android:weightSum="4">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:drawableStart="@drawable/ic_oval_6"
-                    android:drawablePadding="16dp"
-                    android:drawableTint="@color/purple"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="5sp"
-                    android:text="Trip to San fran"
-                    android:textColor="#000000"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="4sp"
-                    android:text="18/06/12"
-                    android:textColor="#4a4a4a"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:letterSpacing="0.01"
-                android:lineSpacingExtra="4sp"
-                android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …"
-                android:textColor="#4d5468"
-                android:textSize="13sp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/note4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:backgroundTint="#f9f9f9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/note3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#f9f9f9"
-                android:weightSum="4">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:drawableStart="@drawable/ic_oval_5"
-                    android:drawablePadding="16dp"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="5sp"
-                    android:text="Shopping list"
-                    android:textColor="#000000"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="4sp"
-                    android:text="18/06/12"
-                    android:textColor="#4a4a4a"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:letterSpacing="0.01"
-                android:lineSpacingExtra="4sp"
-                android:text="So far, this is what we need for our trip:"
-                android:textColor="#4d5468"
-                android:textSize="13sp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_margin="@dimen/fab_margin"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/fab"
-        android:tint="@android:color/white"
-        app:backgroundTint="#3D0F54"
-        app:srcCompat="@android:drawable/ic_input_add" />
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

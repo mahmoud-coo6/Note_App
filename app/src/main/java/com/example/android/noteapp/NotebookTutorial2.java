@@ -14,7 +14,6 @@ public class NotebookTutorial2 extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notebook_tutorial_2);
-        // Perhaps set content view here
 
         TextView skipTV = findViewById(R.id.skip);
         TextView nextTV = findViewById(R.id.next);

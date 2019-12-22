@@ -83,6 +83,17 @@ public class CategoryList extends AppCompatActivity {
                 finish();
             }
         });
+
+        findViewById(R.id.view_art_bord).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CategoryList.this, ViewArtBoard.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
     }
 
     private boolean isNetworkAvailable() {
@@ -94,7 +105,9 @@ public class CategoryList extends AppCompatActivity {
 
 
     private void initData() {
-        FirebaseDatabase.getInstance().getReference().child("Category")
+
+        DatabaseReference scoresRef =  FirebaseDatabase.getInstance().getReference();
+        scoresRef.child("Category")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -114,7 +127,7 @@ public class CategoryList extends AppCompatActivity {
 
                     }
                 });
-
+        scoresRef.keepSynced(true);
     }
 
     private void initSearch(final String search) {

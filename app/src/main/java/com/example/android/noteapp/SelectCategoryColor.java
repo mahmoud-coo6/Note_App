@@ -47,22 +47,10 @@ public class SelectCategoryColor extends AppCompatActivity {
 
 
         intent = getIntent();
-//        if (intent.hasExtra("CategoryId")){
         resetColor(intent.getIntExtra("color", 0));
         title.setText(intent.getStringExtra("title"));
 
         color = getColor();
-//        }
-
-//        color= getResources().getColor(R.color.purple);
-//
-//        resetColor(color);
-//
-//        VectorChildFinder vector = new VectorChildFinder(this, R.drawable.ic_picker2, category);
-//        VectorDrawableCompat.VFullPath path1 = vector.findPathByName("path1");
-//        color= path1.getFillColor();
-
-
         findViewById(R.id.saveBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,19 +87,6 @@ public class SelectCategoryColor extends AppCompatActivity {
         path1.setFillColor(color);
     }
 
-    String createNewNote() {
-        Category category = new Category();
-        category.setCreatedAt(new Date().getTime());
-        category.setLastUpdate(new Date().getTime());
-        category.setTitle("My Diary");
-        category.setColor(getColor());
-
-        String id = FirebaseDatabase.getInstance().getReference().child("Category").push().getKey();
-        category.setId(id);
-        FirebaseDatabase.getInstance().getReference().child("Category").child(id).setValue(category);
-        return "My Diary";
-    }
-
     public void selectColor(View view) {
         VectorChildFinder vector = new VectorChildFinder(this, view.getResources().getIdentifier(view.getTag().toString(), "drawable", getPackageName()), (ImageView) view);
         VectorDrawableCompat.VFullPath path1 = vector.findPathByName("path1");
@@ -123,7 +98,6 @@ public class SelectCategoryColor extends AppCompatActivity {
         VectorChildFinder vector = new VectorChildFinder(SelectCategoryColor.this, R.drawable.ic_links_notebook, category);
         VectorDrawableCompat.VFullPath path1 = vector.findPathByName("path1");
         color = path1.getFillColor();
-//        resetColor(color);
         return color;
     }
 

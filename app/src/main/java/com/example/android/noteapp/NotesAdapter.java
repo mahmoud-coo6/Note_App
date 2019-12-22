@@ -14,14 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.devs.vectorchildfinder.VectorChildFinder;
 import com.devs.vectorchildfinder.VectorDrawableCompat;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteVh> {
-    public static final String NOTE_TITLE = "NOTE_TITLE";
-    public static final String NOTE_DATE = "NOTE_DATE";
-    public static final String NOTE_DESC = "NOTE_DESC";
+    public static final String NOTE_TRANSFER = "NOTE_TRANSFER";
     public static final String NOTE_POSITION = "NOTE_POSITION";
     Context context;
     List<Note> noteList;
@@ -64,9 +65,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteVh> {
             title_img = itemView.findViewById(R.id.title_img);
             itemCard = itemView;
 
-            TextView date_view;
-
-
         }
 
         public void setData(Note note, final int position, NoteVh holder) {
@@ -75,16 +73,18 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteVh> {
             VectorDrawableCompat.VFullPath path1 = vector.findPathByName("path1");
             path1.setFillColor(note.getColor());
             title.setText(note.getTitle());
-            date.setText("" + note.getCreatedAt());
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(note.getCreatedAt());
+            date.setText(formatter.format(calendar.getTime()));
             describtion.setText(note.getBody());
             holder.itemCard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), EditNote.class);
-                    intent.putParcelableArrayListExtra(NOTE_TITLE, (ArrayList) noteList);
-                    intent.putParcelableArrayListExtra(NOTE_DATE, (ArrayList) noteList);
-                    intent.putParcelableArrayListExtra(NOTE_DESC, (ArrayList) noteList);
+                    intent.putParcelableArrayListExtra(NOTE_TRANSFER, (ArrayList) noteList);
                     intent.putExtra(NOTE_POSITION, position);
+                    intent.putExtra("old", true);
                     context.startActivity(intent);
                 }
             });

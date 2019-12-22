@@ -15,7 +15,6 @@ public class NotebookTutorial1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notebook_tutorial_1);
-        // Perhaps set content view here
 
         prefs = getSharedPreferences("com.example.android.noteapp", MODE_PRIVATE);
 
