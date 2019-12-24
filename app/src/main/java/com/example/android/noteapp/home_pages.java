@@ -36,6 +36,7 @@ public class home_pages extends AppCompatActivity {
     List<Category> categoryList = new ArrayList<>();
     NotesAdapter notesAdapter;
     List<Note> noteList = new ArrayList<>();
+    FirebaseUser currentUser;
 
     @SuppressLint("ResourceAsColor")
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -43,8 +44,10 @@ public class home_pages extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_pages);
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        mAuth = FirebaseAuth.getInstance();
+//        mAuth = MyFirebaseController.getCurrentUserId();
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+         currentUser = MyFirebaseController.getCurrentUserId();
 
             initData();
             initNoteData();
@@ -68,13 +71,14 @@ public class home_pages extends AppCompatActivity {
             }
         });
 
-        if (currentUser != null) {
+//        if (currentUser != null) {
 
             findViewById(R.id.addcatagory_img).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    FirebaseUser currentUser = mAuth.getCurrentUser();
+//                    FirebaseUser currentUser = mAuth.getCurrentUser();
                     Intent intent = new Intent(home_pages.this, CreateNoteCategory.class);
+                    intent.putExtra("userId",currentUser.getUid());
                     startActivity(intent);
                     finish();
 
@@ -99,9 +103,9 @@ public class home_pages extends AppCompatActivity {
                 }
             });
 
-        } else {
-            throw new Error("cont do this function");
-        }
+//        } else {
+//            throw new Error("cont do this function");
+//        }
     }
 
     private boolean isNetworkAvailable() {
@@ -115,7 +119,7 @@ public class home_pages extends AppCompatActivity {
         DatabaseReference scoresRef =  getDatabaseReference();
         scoresRef.child("Category");
         scoresRef.keepSynced(true);
-        getDatabaseReference().child("Category").addValueEventListener(new ValueEventListener() {
+        scoresRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 

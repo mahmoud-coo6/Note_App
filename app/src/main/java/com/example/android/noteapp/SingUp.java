@@ -35,25 +35,29 @@ public class SingUp extends AppCompatActivity {
     TextView text_singTv;
     ImageView image_close;
     Button singupBt;
-    FirebaseAuth mAuth;
+//    FirebaseAuth mAuth;
+    FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup);
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
+//        mAuth = FirebaseAuth.getInstance();
+//        FirebaseUser user = mAuth.getCurrentUser();
+        currentUser= MyFirebaseController.getCurrentUserId();
 
-        if (user != null) {
+        if (currentUser != null) {
             Intent intent = new Intent(SingUp.this, home_pages.class);
+            intent.putExtra("userId",currentUser.getUid());
             startActivity(intent);
             finish();
         }
+
         emailEt = findViewById(R.id.emailEt);
         passwordEt = findViewById(R.id.passwordEt);
         singupBt = findViewById(R.id.singupBt);
-        image_close = (ImageView) findViewById(R.id.image_close);
+        image_close = findViewById(R.id.image_close);
 
 
         image_close.setOnClickListener(new View.OnClickListener() {
@@ -105,12 +109,12 @@ public class SingUp extends AppCompatActivity {
     }
 
     private void doSignUp(String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password).
+        MyFirebaseController.auth.createUserWithEmailAndPassword(email, password).
                 addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull final Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            final FirebaseUser user = MyFirebaseController.auth.getCurrentUser();
                             Toast.makeText(SingUp.this, "Success SignUp.", Toast.LENGTH_SHORT).show();
 
                             String emailF = user.getEmail();
@@ -132,6 +136,7 @@ public class SingUp extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Void aVoid) {
                                             Intent intent = new Intent(SingUp.this, home_pages.class);
+                                            intent.putExtra("userId", user.getUid());
                                             startActivity(intent);
                                             finish();
                                         }

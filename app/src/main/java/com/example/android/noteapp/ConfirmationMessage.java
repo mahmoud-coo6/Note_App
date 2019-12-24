@@ -20,5 +20,15 @@ public class ConfirmationMessage extends AppCompatActivity {
 
             }
         });
+
+        findViewById(R.id.close).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmationMessage.this, MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 }

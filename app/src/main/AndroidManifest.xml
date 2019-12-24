@@ -70,6 +70,10 @@
         <activity
             android:name=".ViewArtBoard"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".MyFirebaseController"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

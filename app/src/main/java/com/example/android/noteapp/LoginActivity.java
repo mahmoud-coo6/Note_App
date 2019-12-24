@@ -33,17 +33,21 @@ public class LoginActivity extends AppCompatActivity {
     EditText email_logEt, password_logEt;
     ImageView image_close_login;
     Button loginButon;
-    FirebaseAuth mAuth;
+//    FirebaseAuth mAuth;
+FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
+//        mAuth = FirebaseAuth.getInstance();
+//        FirebaseUser user = mAuth.getCurrentUser();
+        currentUser= MyFirebaseController.getCurrentUserId();
+
+        if (currentUser != null) {
             Intent intent = new Intent(LoginActivity.this, home_pages.class);
+            intent.putExtra("userId",currentUser.getUid());
             startActivity(intent);
             finish();
         }
@@ -114,12 +118,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void doSignIn(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password).
+        MyFirebaseController.auth.signInWithEmailAndPassword(email, password).
                 addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull final Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            final FirebaseUser user = MyFirebaseController.auth.getCurrentUser();
                             Toast.makeText(LoginActivity.this, "Success Login.", Toast.LENGTH_SHORT).show();
 
                             Map<String, Object> data = new HashMap<>();
@@ -137,6 +141,7 @@ public class LoginActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Void aVoid) {
                                             Intent intent = new Intent(LoginActivity.this, home_pages.class);
+                                            intent.putExtra("userId", user.getUid());
                                             startActivity(intent);
                                             finish();
                                         }

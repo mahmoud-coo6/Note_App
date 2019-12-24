@@ -20,6 +20,7 @@ public class Forgot_passwordActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     Button forgetBtn;
     EditText emailTv;
+    FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +30,25 @@ public class Forgot_passwordActivity extends AppCompatActivity {
         forgetBtn = findViewById(R.id.recover_password);
         emailTv = findViewById(R.id.emailEt);
 
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
+        currentUser= MyFirebaseController.getCurrentUserId();
+
+//        mAuth = FirebaseAuth.getInstance();
+//        FirebaseUser user = mAuth.getCurrentUser();
+        if (currentUser != null) {
             Intent intent = new Intent(Forgot_passwordActivity.this, home_pages.class);
+            intent.putExtra("userId",currentUser.getUid());
             startActivity(intent);
             finish();
         }
+
+        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(Forgot_passwordActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         forgetBtn.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +65,7 @@ public class Forgot_passwordActivity extends AppCompatActivity {
 
             private void forgetpassword(final String email) {
 
-                mAuth.sendPasswordResetEmail(email)
+                MyFirebaseController.auth.sendPasswordResetEmail(email)
                         .addOnSuccessListener(new OnSuccessListener() {
                             @Override
                             public void onSuccess(Object o) {
