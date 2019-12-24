@@ -11,7 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class EditNote extends AppCompatActivity {
@@ -39,14 +43,17 @@ public class EditNote extends AppCompatActivity {
             description.setHint("Enter Note description");
             color = getResources().getColor(R.color.purple);
         } else if (intent.hasExtra("old") && intent.getBooleanExtra("old", false) == true) {
-
+            findViewById(R.id.back).setVisibility(View.GONE);
             ArrayList<Note> notes = new ArrayList();
             notes = intent.getParcelableArrayListExtra(NotesAdapter.NOTE_TRANSFER);
             note = notes.get(intent.getIntExtra(NotesAdapter.NOTE_POSITION, 0));
             title.setText(note.getTitle());
             description.setText(note.getBody());
             CheckBox checkBox = findViewById(R.id.date);
-            checkBox.setText(note.getLastUpdate() + "");
+            DateFormat formatter = new SimpleDateFormat("MMMM dd , yyyy HH:mm");
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(note.getLastUpdate());
+            checkBox.setText(formatter.format(calendar.getTime()));
             LinearLayout linearLayout = findViewById(R.id.note_container);
             color = note.getColor();
             linearLayout.setBackgroundColor(color);

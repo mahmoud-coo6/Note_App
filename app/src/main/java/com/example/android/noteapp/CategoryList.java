@@ -27,6 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.android.noteapp.MyFirebaseController.getDatabaseReference;
+
 public class CategoryList extends AppCompatActivity {
 
     CategrayAdapter categrayAdapter;
@@ -39,11 +41,7 @@ public class CategoryList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        if (isNetworkAvailable()) {
             initData();
-        } else {
-            Toast.makeText(this, "there is no interent connection.", Toast.LENGTH_SHORT).show();
-        }
 
         int columns = 3;
         RecyclerView recyclerView = findViewById(R.id.category_rv);
@@ -106,9 +104,10 @@ public class CategoryList extends AppCompatActivity {
 
     private void initData() {
 
-        DatabaseReference scoresRef =  FirebaseDatabase.getInstance().getReference();
-        scoresRef.child("Category")
-                .addValueEventListener(new ValueEventListener() {
+        DatabaseReference scoresRef =  getDatabaseReference();
+        scoresRef.child("Category");
+        scoresRef.keepSynced(true);
+        getDatabaseReference().child("Category").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -127,7 +126,6 @@ public class CategoryList extends AppCompatActivity {
 
                     }
                 });
-        scoresRef.keepSynced(true);
     }
 
     private void initSearch(final String search) {

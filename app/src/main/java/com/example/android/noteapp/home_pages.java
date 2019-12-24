@@ -28,6 +28,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.android.noteapp.MyFirebaseController.getDatabaseReference;
+
 public class home_pages extends AppCompatActivity {
     FirebaseAuth mAuth;
     CategrayAdapter categrayAdapter;
@@ -44,12 +46,8 @@ public class home_pages extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        if (isNetworkAvailable()) {
             initData();
             initNoteData();
-        } else {
-            Toast.makeText(this, "there is no interent connection.", Toast.LENGTH_SHORT).show();
-        }
 
         RecyclerView recyclerView = findViewById(R.id.category_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -114,9 +112,10 @@ public class home_pages extends AppCompatActivity {
     }
 
     private void initData() {
-        DatabaseReference scoresRef =  FirebaseDatabase.getInstance().getReference();
-                scoresRef.child("Category")
-                .addValueEventListener(new ValueEventListener() {
+        DatabaseReference scoresRef =  getDatabaseReference();
+        scoresRef.child("Category");
+        scoresRef.keepSynced(true);
+        getDatabaseReference().child("Category").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -135,13 +134,14 @@ public class home_pages extends AppCompatActivity {
 
                     }
                 });
-        scoresRef.keepSynced(true);
+
     }
 
     private void initNoteData() {
-        DatabaseReference scoresRef =  FirebaseDatabase.getInstance().getReference();
-        scoresRef.child("Note")
-                .addValueEventListener(new ValueEventListener() {
+        DatabaseReference scoresRef =  getDatabaseReference();
+        scoresRef.child("Note");
+        scoresRef.keepSynced(true);
+        getDatabaseReference().child("Note").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -160,7 +160,7 @@ public class home_pages extends AppCompatActivity {
 
                     }
                 });
-        scoresRef.keepSynced(true);
+
     }
 }
 

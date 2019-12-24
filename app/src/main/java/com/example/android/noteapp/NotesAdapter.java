@@ -75,7 +75,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteVh> {
             title.setText(note.getTitle());
             DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
             Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(note.getCreatedAt());
+            calendar.setTimeInMillis(note.getLastUpdate());
             date.setText(formatter.format(calendar.getTime()));
             describtion.setText(note.getBody());
             holder.itemCard.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +88,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteVh> {
                     context.startActivity(intent);
                 }
             });
-
 
         }
     }
