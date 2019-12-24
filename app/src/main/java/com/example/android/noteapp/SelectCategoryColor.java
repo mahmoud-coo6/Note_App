@@ -59,7 +59,7 @@ public class SelectCategoryColor extends AppCompatActivity {
                 data.put("color", color);
 
 
-                FirebaseDatabase.getInstance().getReference().child("Category").child(
+                MyFirebaseController.getDatabaseReference().child("Category").child(
                         intent.getStringExtra("CategoryId")).updateChildren(data)
                         .addOnFailureListener(new OnFailureListener() {
                             @Override

@@ -149,10 +149,10 @@ public class CreateNoteCategory extends AppCompatActivity {
     private void initData() {
         Log.i("test","step 1 "+ currentUser.getUid()+" : "+currentUserId);
 
-        getDatabaseReference().child("User").orderByChild("uid").equalTo(currentUserId).orderByChild("categoryId").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().child("User").orderByChild("uid").equalTo(currentUserId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.i("test","step 2" +dataSnapshot.toString());
+                Log.i("test","step 2" +dataSnapshot.toString()+" count "+dataSnapshot.getChildrenCount());
 
 //                categoryId.clear();
 
@@ -160,7 +160,7 @@ public class CreateNoteCategory extends AppCompatActivity {
 
                     User user = snapshot.getValue(User.class);
                     Log.i("test","step 3");
-                    Log.i("test", "onDataChange: "+user.getCategoryId().toString());
+                    Log.i("test", "onDataChange: "+user.getCategoryId());
 //                    categoryId.add(user.getCategoryId().toString());
                     Log.i("test","step 4");
                     for (String id: user.getCategoryId()){
