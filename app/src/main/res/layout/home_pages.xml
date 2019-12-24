@@ -13,18 +13,23 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:orientation="horizontal"
-        android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
             android:id="@+id/imageView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitStart"
             app:srcCompat="@drawable/navbox" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
 
         <TextView
             android:id="@+id/signout"
@@ -34,7 +39,7 @@
             android:layout_weight="1"
             android:gravity="end"
             android:text="SignOut"
-            android:textColor="#7b1e58"
+            android:textColor="@color/pink"
             android:textSize="17sp" />
     </LinearLayout>
 
@@ -71,7 +76,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:orientation="horizontal"
-        android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider1">
@@ -80,14 +84,19 @@
             android:id="@+id/notbook"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="7sp"
             android:text="Notebooks"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="20sp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
 
         <TextView
+
             android:id="@+id/show_all_category"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -97,7 +106,7 @@
             android:letterSpacing="0.01"
             android:lineSpacingExtra="5sp"
             android:text="Show All"
-            android:textColor="#7b1e58"
+            android:textColor="@color/pink"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -157,7 +166,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:orientation="horizontal"
-        android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imagelist">
@@ -172,6 +180,10 @@
             android:text="Notes"
             android:textColor="#000000"
             android:textSize="20sp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
 
         <TextView
             android:id="@+id/show_all_note"

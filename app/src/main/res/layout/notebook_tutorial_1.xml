@@ -38,7 +38,7 @@
             android:lineSpacingExtra="9sp"
             android:padding="16dp"
             android:text="Notebooks"
-            android:textColor="#7b1e58"
+            android:textColor="@color/pink"
             android:textSize="26sp" />
 
         <TextView
@@ -51,7 +51,7 @@
             android:paddingEnd="44dp"
             android:paddingBottom="32dp"
             android:text="Notebooks are the best place to manage your Notes "
-            android:textColor="#9b9faa"
+            android:textColor="@color/emai_pass_hint"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -81,7 +81,7 @@
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_oval" />
 
-            <TextView
+            <Button
                 android:id="@+id/next"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

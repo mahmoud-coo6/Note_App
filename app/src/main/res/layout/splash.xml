@@ -48,7 +48,7 @@
             android:lineSpacingExtra="9sp"
             android:padding="8dp"
             android:text="Notebooks"
-            android:textColor="#7b1e58"
+            android:textColor="@color/pink"
             android:textSize="26sp" />
 
         <TextView
@@ -60,19 +60,26 @@
             android:paddingStart="44dp"
             android:paddingEnd="44dp"
             android:text="Notebooks are the best place to manage your Notes  "
-            android:textColor="#9b9faa"
+            android:textColor="@color/emai_pass_hint"
             android:textSize="18sp" />
 
 
-        <ImageView
+        <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/singinBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:background="@drawable/but_sing"
+            android:text="@string/Signin"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginBottom="10dp"
             android:src="@drawable/primary_button" />
 
-        <TextView
+        <Button
+            android:textAllCaps="false"
             android:id="@+id/singupTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,6 +88,7 @@
             android:gravity="center"
             android:padding="8dp"
             android:text="Sign up"
+            android:background="@null"
             android:textColor="#1A1824" />
 
 
