@@ -112,7 +112,7 @@ public class EditNote extends AppCompatActivity {
                     note = notes.get(intent.getIntExtra(NotesAdapter.NOTE_POSITION, 0));
 
 
-                    Intent intent = new Intent(EditNote.this, NoteSelectColor.class);
+//                    Intent intent = new Intent(EditNote.this, NoteSelectColor.class);
 
                     intent.putExtra("color", note.getColor());
                     intent.putExtra("title", note.getTitle());

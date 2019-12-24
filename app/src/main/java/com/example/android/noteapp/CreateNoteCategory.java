@@ -1,6 +1,7 @@
 package com.example.android.noteapp;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -25,6 +26,10 @@ public class CreateNoteCategory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_note);
+        title = findViewById(R.id.category_title);
+        title.setPaintFlags(title.getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+
+
 
         findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,7 +42,6 @@ public class CreateNoteCategory extends AppCompatActivity {
 
         changeColor = findViewById(R.id.change_color);
         book = findViewById(R.id.book);
-        title = findViewById(R.id.category_title);
 
         changeColor.setOnClickListener(new View.OnClickListener() {
             @Override
