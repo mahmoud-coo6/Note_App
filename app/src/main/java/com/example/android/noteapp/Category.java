@@ -15,22 +15,25 @@ public class Category implements Parcelable {
             return new Category[size];
         }
     };
+
     String id;
     String title;
     int color;
     long createdAt;
     long lastUpdate;
+    String userId;
 
     public Category() {
 
     }
 
-    public Category(String id, String title, int color, long createdAt, long lastUpdate) {
+    public Category(String id, String title, int color, long createdAt, long lastUpdate,String userId) {
         this.id = id;
         this.title = title;
         this.color = color;
         this.createdAt = createdAt;
         this.lastUpdate = lastUpdate;
+        this.userId=userId;
     }
 
     protected Category(Parcel in) {
@@ -39,6 +42,7 @@ public class Category implements Parcelable {
         this.color = in.readInt();
         this.createdAt = in.readLong();
         this.lastUpdate = in.readLong();
+        this.userId = in.readString();
     }
 
     public String getId() {
@@ -55,6 +59,13 @@ public class Category implements Parcelable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public int getColor() {
@@ -93,6 +104,7 @@ public class Category implements Parcelable {
         dest.writeInt(this.color);
         dest.writeLong(this.createdAt);
         dest.writeLong(this.lastUpdate);
+        dest.writeString(this.userId);
     }
 }
 

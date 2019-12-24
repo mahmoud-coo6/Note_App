@@ -79,33 +79,35 @@ public class CreateNoteCategory extends AppCompatActivity {
 
                 String id = MyFirebaseController.getDatabaseReference().child("Category").push().getKey();
                 category.setId(id);
+                category.setUserId(currentUser.getUid());
                 MyFirebaseController.getDatabaseReference().child("Category").child(id).setValue(category);
 
-                final Map<String, Object> data = new HashMap<>();
-                categoryId= new ArrayList<>();
-                initData();
-                categoryId.add(category.getId());
-                data.put("categoryId", categoryId);
-                Log.i("test", "onClick: 4" +currentUser.getUid()+" : "+currentUser.getEmail()+ " : "+categoryId);
-
-               MyFirebaseController.getDatabaseReference().child("User").child(currentUser.getUid()).updateChildren(data)
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(CreateNoteCategory.this, "update category color faild", Toast.LENGTH_SHORT).show();
-
-                            }
-                        })
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-
-                            }
-                        });
+//                final Map<String, Object> data = new HashMap<>();
+//                categoryId= new ArrayList<>();
+//                initData();
+//                categoryId.add(category.getId());
+//                data.put("categoryId", categoryId);
+//                Log.i("test", "onClick: 4" +currentUser.getUid()+" : "+currentUser.getEmail()+ " : "+categoryId);
+//
+//               MyFirebaseController.getDatabaseReference().child("User").child(currentUser.getUid()).updateChildren(data)
+//                        .addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//                                Toast.makeText(CreateNoteCategory.this, "update category color faild", Toast.LENGTH_SHORT).show();
+//
+//                            }
+//                        })
+//                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                            @Override
+//                            public void onSuccess(Void aVoid) {
+//
+//                            }
+//                        });
 
                 intent.putExtra("color", getColor());
                 intent.putExtra("title", category.getTitle());
                 intent.putExtra("CategoryId", category.getId());
+                intent.putExtra("userId", category.getUserId());
 
                 startActivity(intent);
             }
@@ -124,6 +126,7 @@ public class CreateNoteCategory extends AppCompatActivity {
 
                 String id = FirebaseDatabase.getInstance().getReference().child("Category").push().getKey();
                 category.setId(id);
+                category.setUserId(currentUser.getUid());
                 FirebaseDatabase.getInstance().getReference().child("Category").child(id).setValue(category);
                 Toast.makeText(CreateNoteCategory.this, "Success Create Category.", Toast.LENGTH_SHORT).show();
 
@@ -150,34 +153,33 @@ public class CreateNoteCategory extends AppCompatActivity {
         path1 = vector.findPathByName("path1");
         path1.setFillColor(color);
     }
-    private void initData() {
-        Log.i("test","step 1 "+ currentUser.getUid()+" : "+currentUserId);
-
-        FirebaseDatabase.getInstance().getReference().child("User").orderByChild("uid").equalTo(currentUserId).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.i("test","step 2" +dataSnapshot.toString()+" count "+dataSnapshot.getChildrenCount());
-
-//                categoryId.clear();
-
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-
-                    User user = snapshot.getValue(User.class);
-                    Log.i("test","step 3");
-                    Log.i("test", "onDataChange: "+user.getCategoryId());
-//                    categoryId.add(user.getCategoryId().toString());
-                    Log.i("test","step 4");
-                    for (String id: user.getCategoryId()){
-                        categoryId.add(id);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
+//    private void initData() {
+////        Log.i("test","step 1 "+ currentUser.getUid()+" : "+currentUserId);
+//
+//        FirebaseDatabase.getInstance().getReference().child("User").orderByChild("uid").equalTo(currentUserId).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+////                Log.i("test","step 2" +dataSnapshot.toString()+" count "+dataSnapshot.getChildrenCount());
+////                categoryId.clear();
+//
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//
+//                    User user = snapshot.getValue(User.class);
+//                    Log.i("test","step 3");
+//                    Log.i("test", "onDataChange: "+user.getCategoryId());
+////                    categoryId.add(user.getCategoryId().toString());
+//                    Log.i("test","step 4");
+//                    for (String id: user.getCategoryId()){
+//                        categoryId.add(id);
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
 
 }

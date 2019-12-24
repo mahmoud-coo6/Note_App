@@ -76,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/shape_pick"
+        android:background="@android:color/white"
         android:orientation="vertical"
         android:paddingStart="54dp"
         android:paddingTop="8dp"
@@ -189,7 +189,6 @@
                 android:layout_weight="1"
                 android:onClick="selectColor"
                 android:tag="ic_darkred2"
-                android:tint="@color/pink"
                 app:srcCompat="@drawable/ic_darkred2" />
 
             <ImageView

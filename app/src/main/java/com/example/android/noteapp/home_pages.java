@@ -7,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -44,13 +45,10 @@ public class home_pages extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_pages);
-//        mAuth = FirebaseAuth.getInstance();
-//        mAuth = MyFirebaseController.getCurrentUserId();
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
          currentUser = MyFirebaseController.getCurrentUserId();
 
-            initData();
-            initNoteData();
+        initData();
+        initNoteData();
 
         RecyclerView recyclerView = findViewById(R.id.category_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -58,9 +56,13 @@ public class home_pages extends AppCompatActivity {
         recyclerView.setAdapter(categrayAdapter);
 
         RecyclerView noteRecyclerView = findViewById(R.id.note_rv);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplication(), LinearLayoutManager.VERTICAL, false);
+//        noteRecyclerView.setLayoutManager(linearLayoutManager);
         noteRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         notesAdapter = new NotesAdapter(this, noteList);
         noteRecyclerView.setAdapter(notesAdapter);
+
+
 
         findViewById(R.id.signout).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +80,7 @@ public class home_pages extends AppCompatActivity {
                 public void onClick(View v) {
 //                    FirebaseUser currentUser = mAuth.getCurrentUser();
                     Intent intent = new Intent(home_pages.this, CreateNoteCategory.class);
-                    intent.putExtra("userId",currentUser.getUid());
+//                    intent.putExtra("userId",currentUser.getUid());
                     startActivity(intent);
                     finish();
 
@@ -117,9 +119,9 @@ public class home_pages extends AppCompatActivity {
 
     private void initData() {
         DatabaseReference scoresRef =  getDatabaseReference();
-        scoresRef.child("Category");
+        scoresRef.child("Category").orderByChild("userId").equalTo(currentUser.getUid());
         scoresRef.keepSynced(true);
-        scoresRef.addValueEventListener(new ValueEventListener() {
+        getDatabaseReference().child("Category").orderByChild("userId").equalTo(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -142,10 +144,11 @@ public class home_pages extends AppCompatActivity {
     }
 
     private void initNoteData() {
-        DatabaseReference scoresRef =  getDatabaseReference();
-        scoresRef.child("Note");
-        scoresRef.keepSynced(true);
-        getDatabaseReference().child("Note").addValueEventListener(new ValueEventListener() {
+        DatabaseReference scoresRef2 =  getDatabaseReference();
+        scoresRef2.child("Note").orderByChild("userId").equalTo(currentUser.getUid());
+        scoresRef2.keepSynced(true);
+        getDatabaseReference().child("Note").orderByChild("userId").equalTo(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
+
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -154,7 +157,6 @@ public class home_pages extends AppCompatActivity {
 
                             Note note = snapshot.getValue(Note.class);
                             noteList.add(note);
-
                         }
                         notesAdapter.notifyDataSetChanged();
                     }

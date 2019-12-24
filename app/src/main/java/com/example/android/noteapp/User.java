@@ -8,14 +8,12 @@ import java.util.List;
 public class User implements Parcelable {
     String id;
     String email;
-    List<String> categoryId;
 
    public User(){}
 
-    public User(String id, String email, List<String> categoryId) {
+    public User(String id, String email) {
         this.id = id;
         this.email = email;
-        this.categoryId = categoryId;
     }
 
     public String getId() {
@@ -34,17 +32,6 @@ public class User implements Parcelable {
         this.email = email;
     }
 
-    public List<String> getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(List<String> categoryId) {
-        this.categoryId = categoryId;
-    }
-
-//    public void addCategoryId(String category) {
-//        this.categoryId.add(category);
-//    }
 
     @Override
     public int describeContents() {
@@ -55,13 +42,11 @@ public class User implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
         dest.writeString(this.email);
-        dest.writeStringList(this.categoryId);
     }
 
     protected User(Parcel in) {
         this.id = in.readString();
         this.email = in.readString();
-        this.categoryId = in.createStringArrayList();
     }
 
     public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {

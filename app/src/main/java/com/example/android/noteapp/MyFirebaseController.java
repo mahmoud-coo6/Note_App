@@ -8,7 +8,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MyFirebaseController {
 
    static FirebaseAuth  mFirebaseAuth;
-   static FirebaseDatabase mFirebaseDatabase ;
+//   static FirebaseDatabase mFirebaseDatabase ;
+   static DatabaseReference mFirebaseDatabase ;
    static FirebaseAuth auth;
 //   static DatabaseReference mFirebaseDatabase ;
 
@@ -36,11 +37,14 @@ public class MyFirebaseController {
 //    }
 
     public static DatabaseReference getDatabaseReference (){
+
         if (mFirebaseDatabase == null) {
-            mFirebaseDatabase = FirebaseDatabase.getInstance();
-            mFirebaseDatabase.setPersistenceEnabled(true);
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            database.setPersistenceEnabled(true);
+            mFirebaseDatabase = database.getReference();
         }
-       return  mFirebaseDatabase.getReference();
+
+       return  mFirebaseDatabase;
     }
 
 }

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,14 +32,16 @@ public class NoteList extends AppCompatActivity {
     List<Note> noteList = new ArrayList<>();
     DatabaseReference mSearchedReference;
     EditText search;
+    FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.note_list);
 
-            initData();
+        currentUser = MyFirebaseController.getCurrentUserId();
 
+            initData();
 
         RecyclerView recyclerView = findViewById(R.id.category_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -73,7 +76,7 @@ public class NoteList extends AppCompatActivity {
     private void initData() {
         DatabaseReference scoresRef =  getDatabaseReference().child("Note");
         scoresRef.keepSynced(true);
-        getDatabaseReference().child("Note").addValueEventListener(new ValueEventListener() {
+        getDatabaseReference().child("Note").orderByChild("userId").equalTo(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -95,7 +98,7 @@ public class NoteList extends AppCompatActivity {
     }
 
     private void initSearch(final String search) {
-        FirebaseDatabase.getInstance().getReference().child("Note")
+        FirebaseDatabase.getInstance().getReference().child("Note").orderByChild("userId").equalTo(currentUser.getUid())
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

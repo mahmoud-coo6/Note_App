@@ -22,12 +22,13 @@ public class Note implements Parcelable {
     long createdAt;
     long lastUpdate;
     String categoryId;
+    String userId;
 
     public Note() {
 
     }
 
-    public Note(String id, String title, String body, int color, long createdAt, long lastUpdate, String categoryId) {
+    public Note(String id, String title, String body, int color, long createdAt, long lastUpdate, String categoryId, String userId) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -35,6 +36,7 @@ public class Note implements Parcelable {
         this.createdAt = createdAt;
         this.lastUpdate = lastUpdate;
         this.categoryId = categoryId;
+        this.userId = userId;
     }
 
     protected Note(Parcel in) {
@@ -45,6 +47,7 @@ public class Note implements Parcelable {
         this.createdAt = in.readLong();
         this.lastUpdate = in.readLong();
         this.categoryId = in.readString();
+        this.userId = in.readString();
     }
 
     public String getId() {
@@ -69,6 +72,13 @@ public class Note implements Parcelable {
 
     public void setBody(String body) {
         this.body = body;
+    }
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public int getColor() {
@@ -117,6 +127,7 @@ public class Note implements Parcelable {
         dest.writeLong(this.createdAt);
         dest.writeLong(this.lastUpdate);
         dest.writeString(this.categoryId);
+        dest.writeString(this.userId);
     }
 }
 

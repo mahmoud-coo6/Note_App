@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
@@ -24,6 +25,7 @@ public class EditNote extends AppCompatActivity {
     Note note;
     EditText title, description;
     int color;
+    FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +34,9 @@ public class EditNote extends AppCompatActivity {
 
         title = findViewById(R.id.note_title);
         description = findViewById(R.id.note_desc);
-        intent = getIntent();
 
+        intent = getIntent();
+        currentUser= MyFirebaseController.getCurrentUserId();
         if (intent.hasExtra("new") && intent.getBooleanExtra("new", false) == true) {
             findViewById(R.id.date).setVisibility(View.GONE);
 
@@ -74,6 +77,7 @@ public class EditNote extends AppCompatActivity {
 
                     String id = FirebaseDatabase.getInstance().getReference().child("Note").push().getKey();
                     note.setId(id);
+                    note.setUserId(currentUser.getUid());
                     note.setCategoryId(intent.getStringExtra("CategoryId"));
                     FirebaseDatabase.getInstance().getReference().child("Note").child(id).setValue(note);
 
@@ -99,6 +103,7 @@ public class EditNote extends AppCompatActivity {
 
                     String id = FirebaseDatabase.getInstance().getReference().child("Note").push().getKey();
                     note.setId(id);
+                    note.setUserId(currentUser.getUid());
                     note.setCategoryId(intent.getStringExtra("CategoryId"));
                     FirebaseDatabase.getInstance().getReference().child("Note").child(id).setValue(note);
 
@@ -119,7 +124,7 @@ public class EditNote extends AppCompatActivity {
                     note = notes.get(intent.getIntExtra(NotesAdapter.NOTE_POSITION, 0));
 
 
-//                    Intent intent = new Intent(EditNote.this, NoteSelectColor.class);
+                    Intent intent = new Intent(EditNote.this, NoteSelectColor.class);
 
                     intent.putExtra("color", note.getColor());
                     intent.putExtra("title", note.getTitle());
