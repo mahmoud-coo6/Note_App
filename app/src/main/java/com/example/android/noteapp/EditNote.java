@@ -13,7 +13,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -36,7 +35,7 @@ public class EditNote extends AppCompatActivity {
         description = findViewById(R.id.note_desc);
 
         intent = getIntent();
-        currentUser= MyFirebaseController.getCurrentUserId();
+        currentUser = MyFirebaseController.getCurrentUserId();
         if (intent.hasExtra("new") && intent.getBooleanExtra("new", false) == true) {
             findViewById(R.id.date).setVisibility(View.GONE);
 

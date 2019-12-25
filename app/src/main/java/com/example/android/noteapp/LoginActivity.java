@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,7 +20,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -33,8 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText email_logEt, password_logEt;
     ImageView image_close_login;
     Button loginButon;
-//    FirebaseAuth mAuth;
-FirebaseUser currentUser;
+    //    FirebaseAuth mAuth;
+    FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +41,11 @@ FirebaseUser currentUser;
         setContentView(R.layout.activity_login);
 //        mAuth = FirebaseAuth.getInstance();
 //        FirebaseUser user = mAuth.getCurrentUser();
-        currentUser= MyFirebaseController.getCurrentUserId();
+        currentUser = MyFirebaseController.getCurrentUserId();
 
         if (currentUser != null) {
             Intent intent = new Intent(LoginActivity.this, home_pages.class);
-            intent.putExtra("userId",currentUser.getUid());
+            intent.putExtra("userId", currentUser.getUid());
             startActivity(intent);
             finish();
         }

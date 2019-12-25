@@ -44,13 +44,13 @@ public class NoteSelectColor extends AppCompatActivity {
         final CheckBox date = findViewById(R.id.date);
 
         intent = getIntent();
-        categoryId= intent.getStringExtra("CategoryId");
+        categoryId = intent.getStringExtra("CategoryId");
         title.setText(intent.getStringExtra("title"));
         description.setText(intent.getStringExtra("description"));
         color = intent.getIntExtra("color", 0);
         DateFormat formatter = new SimpleDateFormat("MMMM dd , yyyy HH:mm");
         Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(intent.getLongExtra("date",0));
+        calendar.setTimeInMillis(intent.getLongExtra("date", 0));
         date.setText(formatter.format(calendar.getTime()));
         container.setBackgroundColor(color);
 
@@ -75,7 +75,7 @@ public class NoteSelectColor extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Intent intent = new Intent(NoteSelectColor.this, CategoryNote.class);
-                                intent.putExtra("CategoryId",categoryId);
+                                intent.putExtra("CategoryId", categoryId);
                                 startActivity(intent);
                                 finish();
                             }

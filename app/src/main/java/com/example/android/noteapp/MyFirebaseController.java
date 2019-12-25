@@ -7,18 +7,18 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MyFirebaseController {
 
-   static FirebaseAuth  mFirebaseAuth;
-//   static FirebaseDatabase mFirebaseDatabase ;
-   static DatabaseReference mFirebaseDatabase ;
-   static FirebaseAuth auth;
+    static FirebaseAuth mFirebaseAuth;
+    //   static FirebaseDatabase mFirebaseDatabase ;
+    static DatabaseReference mFirebaseDatabase;
+    static FirebaseAuth auth;
 //   static DatabaseReference mFirebaseDatabase ;
 
-    public static FirebaseUser getCurrentUserId(){
+    public static FirebaseUser getCurrentUserId() {
         if (mFirebaseAuth == null)
             mFirebaseAuth = FirebaseAuth.getInstance();
 
-        auth= mFirebaseAuth;
-      return   mFirebaseAuth.getCurrentUser();
+        auth = mFirebaseAuth;
+        return mFirebaseAuth.getCurrentUser();
     }
 
 //    public static FirebaseUser getAuthtication(){
@@ -36,7 +36,7 @@ public class MyFirebaseController {
 //      return   mFirebaseAuth.getCurrentUser().getUid();
 //    }
 
-    public static DatabaseReference getDatabaseReference (){
+    public static DatabaseReference getDatabaseReference() {
 
         if (mFirebaseDatabase == null) {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -44,7 +44,7 @@ public class MyFirebaseController {
             mFirebaseDatabase = database.getReference();
         }
 
-       return  mFirebaseDatabase;
+        return mFirebaseDatabase;
     }
 
 }

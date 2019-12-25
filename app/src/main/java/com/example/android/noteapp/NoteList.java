@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +40,7 @@ public class NoteList extends AppCompatActivity {
 
         currentUser = MyFirebaseController.getCurrentUserId();
 
-            initData();
+        initData();
 
         RecyclerView recyclerView = findViewById(R.id.category_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -74,27 +73,27 @@ public class NoteList extends AppCompatActivity {
 
 
     private void initData() {
-        DatabaseReference scoresRef =  getDatabaseReference().child("Note");
+        DatabaseReference scoresRef = getDatabaseReference().child("Note");
         scoresRef.keepSynced(true);
         getDatabaseReference().child("Note").orderByChild("userId").equalTo(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        noteList.clear();
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                noteList.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
-                            Note note = snapshot.getValue(Note.class);
-                            noteList.add(note);
+                    Note note = snapshot.getValue(Note.class);
+                    noteList.add(note);
 
-                        }
-                        noteAdapter.notifyDataSetChanged();
-                    }
+                }
+                noteAdapter.notifyDataSetChanged();
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
+            }
+        });
     }
 
     private void initSearch(final String search) {

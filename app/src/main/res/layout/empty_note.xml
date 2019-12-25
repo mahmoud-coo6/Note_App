@@ -27,25 +27,17 @@
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:scaleType="center"
                 android:layout_gravity="start"
+                android:layout_weight="1"
+                android:scaleType="fitStart"
                 app:srcCompat="@drawable/navbox" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3" />
 
-            <TextView
-                android:id="@+id/signout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center"
-                android:layout_weight="1"
-                android:gravity="start"
-                android:text="singout"
-                android:textColor="#7b1e58"
-                android:textSize="17sp" />
+
         </LinearLayout>
 
 

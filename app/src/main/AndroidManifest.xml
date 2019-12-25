@@ -65,7 +65,7 @@
             android:name=".CategoryNote"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-                android:name=".NoteSelectColor"
+            android:name=".NoteSelectColor"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".ViewArtBoard"

@@ -9,7 +9,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -45,7 +44,7 @@ public class CategoryList extends AppCompatActivity {
 
         currentUser = MyFirebaseController.getCurrentUserId();
 
-            initData();
+        initData();
 
         int columns = 3;
         RecyclerView recyclerView = findViewById(R.id.category_rv);
@@ -108,28 +107,28 @@ public class CategoryList extends AppCompatActivity {
 
     private void initData() {
 
-        DatabaseReference scoresRef =  getDatabaseReference();
+        DatabaseReference scoresRef = getDatabaseReference();
         scoresRef.child("Category");
         scoresRef.keepSynced(true);
         getDatabaseReference().child("Category").orderByChild("userId").equalTo(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        categoryList.clear();
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                categoryList.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
-                            Category category = snapshot.getValue(Category.class);
-                            categoryList.add(category);
+                    Category category = snapshot.getValue(Category.class);
+                    categoryList.add(category);
 
-                        }
-                        categrayAdapter.notifyDataSetChanged();
-                    }
+                }
+                categrayAdapter.notifyDataSetChanged();
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
+            }
+        });
     }
 
     private void initSearch(final String search) {

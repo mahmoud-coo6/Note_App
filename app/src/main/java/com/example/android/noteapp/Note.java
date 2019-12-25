@@ -73,6 +73,7 @@ public class Note implements Parcelable {
     public void setBody(String body) {
         this.body = body;
     }
+
     public String getUserId() {
         return userId;
     }

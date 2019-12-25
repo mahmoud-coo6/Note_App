@@ -3,33 +3,20 @@ package com.example.android.noteapp;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.devs.vectorchildfinder.VectorChildFinder;
 import com.devs.vectorchildfinder.VectorDrawableCompat;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import static com.example.android.noteapp.MyFirebaseController.getDatabaseReference;
 
 public class CreateNoteCategory extends AppCompatActivity {
 
@@ -45,8 +32,7 @@ public class CreateNoteCategory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_note);
         title = findViewById(R.id.category_title);
-        title.setPaintFlags(title.getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-
+        title.setPaintFlags(title.getPaintFlags() & (~Paint.UNDERLINE_TEXT_FLAG));
 
 
         findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
@@ -58,13 +44,13 @@ public class CreateNoteCategory extends AppCompatActivity {
                 finish();
             }
         });
-        currentUser= MyFirebaseController.getCurrentUserId();
+        currentUser = MyFirebaseController.getCurrentUserId();
 
         changeColor = findViewById(R.id.change_color);
         book = findViewById(R.id.book);
 
-        Intent intent= getIntent();
-        currentUserId= intent.getStringExtra("userId");
+        Intent intent = getIntent();
+        currentUserId = intent.getStringExtra("userId");
 
         changeColor.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,17 +3,32 @@ package com.example.android.noteapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.List;
-
 public class User implements Parcelable {
+    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel source) {
+            return new User(source);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
     String id;
     String email;
 
-   public User(){}
+    public User() {
+    }
 
     public User(String id, String email) {
         this.id = id;
         this.email = email;
+    }
+
+    protected User(Parcel in) {
+        this.id = in.readString();
+        this.email = in.readString();
     }
 
     public String getId() {
@@ -32,7 +47,6 @@ public class User implements Parcelable {
         this.email = email;
     }
 
-
     @Override
     public int describeContents() {
         return 0;
@@ -43,22 +57,5 @@ public class User implements Parcelable {
         dest.writeString(this.id);
         dest.writeString(this.email);
     }
-
-    protected User(Parcel in) {
-        this.id = in.readString();
-        this.email = in.readString();
-    }
-
-    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
-        @Override
-        public User createFromParcel(Parcel source) {
-            return new User(source);
-        }
-
-        @Override
-        public User[] newArray(int size) {
-            return new User[size];
-        }
-    };
 }
 

@@ -30,13 +30,13 @@ public class Forgot_passwordActivity extends AppCompatActivity {
         forgetBtn = findViewById(R.id.recover_password);
         emailTv = findViewById(R.id.emailEt);
 
-        currentUser= MyFirebaseController.getCurrentUserId();
+        currentUser = MyFirebaseController.getCurrentUserId();
 
 //        mAuth = FirebaseAuth.getInstance();
 //        FirebaseUser user = mAuth.getCurrentUser();
         if (currentUser != null) {
             Intent intent = new Intent(Forgot_passwordActivity.this, home_pages.class);
-            intent.putExtra("userId",currentUser.getUid());
+            intent.putExtra("userId", currentUser.getUid());
             startActivity(intent);
             finish();
         }
@@ -44,7 +44,7 @@ public class Forgot_passwordActivity extends AppCompatActivity {
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(Forgot_passwordActivity.this, MainActivity.class);
+                Intent intent = new Intent(Forgot_passwordActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -27,13 +27,13 @@ public class Category implements Parcelable {
 
     }
 
-    public Category(String id, String title, int color, long createdAt, long lastUpdate,String userId) {
+    public Category(String id, String title, int color, long createdAt, long lastUpdate, String userId) {
         this.id = id;
         this.title = title;
         this.color = color;
         this.createdAt = createdAt;
         this.lastUpdate = lastUpdate;
-        this.userId=userId;
+        this.userId = userId;
     }
 
     protected Category(Parcel in) {
@@ -60,6 +60,7 @@ public class Category implements Parcelable {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getUserId() {
         return userId;
     }

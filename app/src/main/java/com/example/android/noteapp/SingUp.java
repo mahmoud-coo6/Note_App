@@ -21,7 +21,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -35,7 +34,7 @@ public class SingUp extends AppCompatActivity {
     TextView text_singTv;
     ImageView image_close;
     Button singupBt;
-//    FirebaseAuth mAuth;
+    //    FirebaseAuth mAuth;
     FirebaseUser currentUser;
 
     @Override
@@ -45,11 +44,11 @@ public class SingUp extends AppCompatActivity {
         setContentView(R.layout.activity_singup);
 //        mAuth = FirebaseAuth.getInstance();
 //        FirebaseUser user = mAuth.getCurrentUser();
-        currentUser= MyFirebaseController.getCurrentUserId();
+        currentUser = MyFirebaseController.getCurrentUserId();
 
         if (currentUser != null) {
             Intent intent = new Intent(SingUp.this, home_pages.class);
-            intent.putExtra("userId",currentUser.getUid());
+            intent.putExtra("userId", currentUser.getUid());
             startActivity(intent);
             finish();
         }

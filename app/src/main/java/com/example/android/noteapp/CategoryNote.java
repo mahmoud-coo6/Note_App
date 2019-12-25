@@ -10,7 +10,6 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -67,7 +66,7 @@ public class CategoryNote extends AppCompatActivity {
             }
         });
 
-            initData();
+        initData();
 
         RecyclerView recyclerView = findViewById(R.id.category_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -101,7 +100,7 @@ public class CategoryNote extends AppCompatActivity {
 
 
     private void initData() {
-        DatabaseReference scoresRef =  getDatabaseReference();
+        DatabaseReference scoresRef = getDatabaseReference();
         scoresRef.child("Note").orderByChild("categoryId").equalTo(categoryId);
         scoresRef.keepSynced(true);
         getDatabaseReference().child("Note").orderByChild("categoryId").equalTo(categoryId)
