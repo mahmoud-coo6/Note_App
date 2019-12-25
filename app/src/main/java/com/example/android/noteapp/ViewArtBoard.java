@@ -33,11 +33,8 @@ public class ViewArtBoard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.art_board);
 
-        if (isNetworkAvailable()) {
             initData();
-        } else {
-            Toast.makeText(this, "there is no interent connection.", Toast.LENGTH_SHORT).show();
-        }
+
 
         int columns = 4;
         RecyclerView recyclerView = findViewById(R.id.category_rv);
@@ -56,6 +53,7 @@ public class ViewArtBoard extends AppCompatActivity {
 
 
     private void initData() {
+
         DatabaseReference scoresRef = getDatabaseReference().child("Category");
         scoresRef.keepSynced(true);
         getDatabaseReference().child("Category")
